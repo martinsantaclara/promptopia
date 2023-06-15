@@ -26,6 +26,8 @@ const UserPage = async ({params: {id}}: Params) => {
     const userPromptsData: Promise<prompt[]> = getUserPrompts(parseInt(id));
     // const [user, userPrompts] = await Promise.all([userData, userPromptsData]);
 
+    //  {/* @ts-expect-error Server Component */}
+
     const user = await userData;
 
     return (
@@ -33,8 +35,6 @@ const UserPage = async ({params: {id}}: Params) => {
             <h2>{user?.email}</h2>
             <br />
             <Suspense fallback={<h2>Loading...</h2>}>
-                {/* @ts-expect-error Server Component */}
-
                 <UserPosts promise={userPromptsData} />
             </Suspense>
         </>
