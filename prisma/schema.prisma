@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model prompt {
+  id        Int       @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedInt
+  creator   Int       @db.UnsignedInt
+  prompt    String    @db.VarChar(255)
+  tag       String?   @db.VarChar(100)
+  createdAt DateTime?
+  user      user      @relation(fields: [creator], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_prompt_user")
+
+  @@index([creator], map: "fk_prompt_user_idx")
+}
+
+model user {
+  id       Int      @id @unique(map: "id_UNIQUE") @default(autoincrement()) @db.UnsignedInt
+  email    String   @unique(map: "email_UNIQUE") @db.VarChar(100)
+  username String   @unique(map: "name_UNIQUE") @db.VarChar(100)
+  image    String   @db.VarChar(255)
+  prompt   prompt[]
+}
