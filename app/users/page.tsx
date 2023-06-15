@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: 'Users',
 };
 
-// export const revalidate = 60;
+export const revalidate = 60;
 
 import {user} from '@prisma/client';
 import getUsers from '@/lib/getUsers';
