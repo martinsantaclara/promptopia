@@ -8,7 +8,7 @@ const getUsers = async () => {
     //     next: {revalidate: 10},
     // });
     // const res = await fetch('http://localhost:3000/api/prompt');
-    const res = await fetch('http://localhost:3000/api/prompt', {
+    const res = await fetch(`${process.env.URL_BASE}/api/user`, {
         cache: 'no-store',
     });
     // The return value is *not* serialized

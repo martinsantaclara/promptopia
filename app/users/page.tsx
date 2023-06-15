@@ -12,12 +12,12 @@ import {user} from '@prisma/client';
 import getUsers from '@/lib/getUsers';
 
 const UsersPage = async () => {
-    const usersData: Promise<user[]> = getAllUsers();
-    const users = await usersData;
+    // const usersData: Promise<user[]> = getAllUsers();
+    // const users = await usersData;
 
-    // const users: user[] = await getUsers();
+    const users: user[] = await getUsers();
 
-    console.log('users');
+    console.log(users);
 
     return (
         <div>
