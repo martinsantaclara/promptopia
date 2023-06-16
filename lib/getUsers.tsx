@@ -4,9 +4,10 @@ const getUsers = async () => {
     // const response = await prisma.user.findMany();
     // // const users = await response
     // return response;
-    const res = await fetch(`${process.env.URL_BASE}/api/user`, {
-        next: {revalidate: 10},
-    });
+    // const res = await fetch(`${process.env.URL_BASE}/api/user`, {
+    //     next: {revalidate: 10},
+    // });
+    const res = await fetch(`${process.env.URL_BASE}/api/user`);
     // const res = await fetch('http://localhost:3000/api/prompt');
     // const res = await fetch(`${process.env.URL_BASE}/api/user`, {
     //     cache: 'no-store',
