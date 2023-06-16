@@ -1,6 +1,8 @@
 import {Metadata} from 'next';
 import getAllUsers from '@/lib/getAllUsers';
 import Link from 'next/link';
+import {user} from '@prisma/client';
+import getUsers from '@/lib/getUsers';
 
 export const metadata: Metadata = {
     title: 'Users',
@@ -8,16 +10,13 @@ export const metadata: Metadata = {
 
 export const revalidate = 120;
 
-import {user} from '@prisma/client';
-import getUsers from '@/lib/getUsers';
-
 const UsersPage = async () => {
-    const usersData: Promise<user[]> = getAllUsers();
-    const users = await usersData;
+    // const usersData: Promise<user[]> = getAllUsers();
+    // const users = await usersData;
 
-    // const users: user[] = await getUsers();
+    const users: user[] = await getUsers();
 
-    console.log(users);
+    // console.log(users);
 
     return (
         <div>

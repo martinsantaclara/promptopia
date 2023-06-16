@@ -4,6 +4,7 @@ import {user, prompt} from '@prisma/client';
 import {Suspense} from 'react';
 import UserPosts from './components/UserPosts';
 import {Metadata} from 'next';
+import getAllUsers from '@/lib/getAllUsers';
 
 type Params = {
     params: {id: string};
@@ -42,3 +43,18 @@ const UserPage = async ({params: {id}}: Params) => {
 };
 
 export default UserPage;
+
+export const generateStaticParams = async () => {
+    const usersData: Promise<user[]> = getAllUsers();
+    const users = await usersData;
+
+    return users.map((user) => ({
+        id: user.id.toString(),
+    }));
+
+    // return users.map((user) => {
+    //     {
+    //         user.id;
+    //     }
+    // });
+};
