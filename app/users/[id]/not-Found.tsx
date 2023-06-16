@@ -1,5 +1,7 @@
-const notFound = () => {
-    return <div>notFound</div>;
+const NotFound = () => {
+    return (
+        <h1 style={{fontSize: '4rem', fontWeight: '900'}}>User not Found!!!</h1>
+    );
 };
 
-export default notFound;
+export default NotFound;
