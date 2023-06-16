@@ -1,6 +1,6 @@
 const NotFound = () => {
     return (
-        <h1 style={{fontSize: '4rem', fontWeight: '900'}}>User not Found!!!</h1>
+        <h1 style={{fontSize: '4rem', fontWeight: '900'}}>User Not Found!!!</h1>
     );
 };
 
