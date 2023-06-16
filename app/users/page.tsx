@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export const revalidate = 120;
 
 const UsersPage = async () => {
-    // const usersData: Promise<user[]> = getAllUsers();
-    // const users = await usersData;
+    const usersData: Promise<user[]> = getAllUsers();
+    const users = await usersData;
 
-    const users: user[] = await getUsers();
+    // const users: user[] = await getUsers();
 
     // console.log(users);
 
