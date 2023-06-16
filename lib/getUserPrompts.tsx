@@ -6,7 +6,7 @@ const getUserPrompts = async (userId: number) => {
             creator: userId,
         },
     });
-    if (!userPrompts) throw new Error(`Dont Fetched Prompts`);
+    if (!userPrompts) return undefined;
     return userPrompts;
 };
 

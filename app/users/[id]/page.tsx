@@ -6,6 +6,8 @@ import UserPosts from './components/UserPosts';
 import {Metadata} from 'next';
 import getAllUsers from '@/lib/getAllUsers';
 
+import {notFound} from 'next/navigation';
+
 type Params = {
     params: {id: string};
 };
@@ -13,8 +15,14 @@ type Params = {
 export const generateMetadata = async ({
     params: {id},
 }: Params): Promise<Metadata> => {
-    const userData: Promise<user | null> = getUser(parseInt(id));
-    const user: user | null = await userData;
+    const userData: Promise<user | undefined> = getUser(parseInt(id));
+    const user: user | undefined = await userData;
+
+    if (!user) {
+        return {
+            title: 'User Not Found',
+        };
+    }
 
     return {
         title: user?.username,
@@ -23,13 +31,17 @@ export const generateMetadata = async ({
 };
 
 const UserPage = async ({params: {id}}: Params) => {
-    const userData: Promise<user | null> = getUser(parseInt(id));
-    const userPromptsData: Promise<prompt[]> = getUserPrompts(parseInt(id));
+    const userData: Promise<user | undefined> = getUser(parseInt(id));
+    const userPromptsData: Promise<prompt[] | undefined> = getUserPrompts(
+        parseInt(id)
+    );
     // const [user, userPrompts] = await Promise.all([userData, userPromptsData]);
 
     //  {/* @ts-expect-error Server Component */}
 
     const user = await userData;
+
+    if (!user) return notFound();
 
     return (
         <>

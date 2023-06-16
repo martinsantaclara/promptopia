@@ -5,7 +5,7 @@ const getUser = async (id: number) => {
             id,
         },
     });
-    if (!user) throw new Error(`User ${id} not found`);
+    if (!user) return undefined;
     return user;
 };
 

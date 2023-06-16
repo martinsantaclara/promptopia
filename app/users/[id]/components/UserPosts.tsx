@@ -1,12 +1,12 @@
 import {prompt} from '@prisma/client';
 
 type Props = {
-    promise: Promise<prompt[]>;
+    promise: Promise<prompt[] | undefined>;
 };
 
 const UserPosts = async ({promise}: Props) => {
     const prompts = await promise;
-    const content = prompts.map((prompt) => {
+    const content = prompts?.map((prompt) => {
         return (
             <>
                 <article key={prompt.id}>
