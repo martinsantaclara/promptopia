@@ -9,19 +9,10 @@ export const metadata: Metadata = {
 
 export const revalidate = 10;
 
-const getUsers = async () => {
-    const res = await fetch(`${process.env.URL_BASE}/api/users`, {
-        next: {revalidate: 10},
-    });
-
-    return res.json();
-};
-
 const UsersPage = async () => {
-    // const usersData: Promise<user[]> = getAllUsers();
-    // const users = await usersData;
+    const usersData: Promise<user[]> = getAllUsers();
+    const users = await usersData;
 
-    const users: user[] = await getUsers();
     console.log(users);
 
     return (
