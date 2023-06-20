@@ -7,6 +7,9 @@ import {Metadata} from 'next';
 import getAllUsers from '@/lib/getAllUsers';
 
 import {notFound} from 'next/navigation';
+import UserPostsSinPromise from './components/UserPostsSinPromise';
+import getComments from '@/lib/getComments';
+import CommentsPage from './components/CommentsCpte';
 
 type Params = {
     params: {id: string};
@@ -32,12 +35,13 @@ export const generateMetadata = async ({
 
 const UserPage = async ({params: {id}}: Params) => {
     const userData: Promise<user | undefined> = getUser(parseInt(id));
-    const userPromptsData: Promise<prompt[] | undefined> = getUserPrompts(
-        parseInt(id)
-    );
+    // const userPromptsData: Promise<prompt[] | undefined> = getUserPrompts(
+    //     parseInt(id)
+    // );
     // const [user, userPrompts] = await Promise.all([userData, userPromptsData]);
+    // {/* @ts-expect-error Server Component */}
 
-    //  {/* @ts-expect-error Server Component */}
+    // const commentData: Promise<Commentario[]> = getComments();
 
     const user = await userData;
 
@@ -47,8 +51,11 @@ const UserPage = async ({params: {id}}: Params) => {
         <>
             <h2>{user?.email}</h2>
             <br />
-            <Suspense fallback={<h2>Loading...</h2>}>
-                <UserPosts promise={userPromptsData} />
+            <Suspense fallback={<h2>🌀 Loading...</h2>}>
+                {/* <UserPosts promise={userPromptsData} /> */}
+                {/* <CommentsPage /> */}
+
+                <UserPostsSinPromise id={id} />
             </Suspense>
         </>
     );
@@ -63,10 +70,4 @@ export const generateStaticParams = async () => {
     return users.map((user) => ({
         id: user.id.toString(),
     }));
-
-    // return users.map((user) => {
-    //     {
-    //         user.id;
-    //     }
-    // });
 };

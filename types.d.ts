@@ -1,6 +1,13 @@
-type user = {
+type Post = {
+    userId: number;
     id: number;
+    title: string;
+    body: string;
+};
+
+type Commentario = {
+    id: number;
+    name: string;
     email: string;
-    username: string;
-    image: string;
+    body: string;
 };

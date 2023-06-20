@@ -2,21 +2,27 @@ import {Metadata} from 'next';
 import getAllUsers from '@/lib/getAllUsers';
 import Link from 'next/link';
 import {user} from '@prisma/client';
-import getUsers from '@/lib/getUsers';
 
 export const metadata: Metadata = {
     title: 'Users',
 };
 
-export const revalidate = 120;
+// export const revalidate = 0;
+
+const getUsers = async () => {
+    const res = await fetch(`${process.env.URL_BASE}/api/user`, {
+        cache: 'no-store',
+    });
+
+    return res.json();
+};
 
 const UsersPage = async () => {
-    const usersData: Promise<user[]> = getAllUsers();
-    const users = await usersData;
+    // const usersData: Promise<user[]> = getAllUsers();
+    // const users = await usersData;
 
-    // const users: user[] = await getUsers();
-
-    // console.log(users);
+    const users: user[] = await getUsers();
+    console.log(users);
 
     return (
         <div>
