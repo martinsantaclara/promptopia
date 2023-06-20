@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 // export const revalidate = 0;
 
 const getUsers = async () => {
-    const res = await fetch(`${process.env.URL_BASE}/api/user`, {
+    const res = await fetch(`${process.env.URL_BASE}/api/users`, {
         cache: 'no-store',
     });
 
