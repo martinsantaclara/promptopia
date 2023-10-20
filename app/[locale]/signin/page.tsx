@@ -62,7 +62,7 @@ export default function SignInPage() {
     };
     return (
         <>
-            <div className="flex flex-col justify-center items-center my-0 mx-auto w-10/12 min-w-[250px] max-w-[350px] h-[575px] relative overflow-hidden shadow rounded-3xl sm:hidden">
+            <div className="max-sm:flex flex-col justify-center items-center my-0 mx-auto w-10/12 min-w-[250px] max-w-[350px] h-[575px] relative overflow-hidden shadow rounded-3xl sm:hidden">
                 <div
                     className={`w-full h-[70%] absolute top-0 !bg-transparent ${
                         signInActive ? 'opacity-100' : 'opacity-0'
@@ -314,7 +314,7 @@ export default function SignInPage() {
                 </div>
             </div>
             <div
-                className={`hidden sm:block container ${
+                className={`max-sm:hidden sm:block container ${
                     rightPanel ? 'rightPanelActive' : ''
                 }`}
                 id="container"
