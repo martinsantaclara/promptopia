@@ -80,7 +80,7 @@ const MyProfile = ({data, pass}: MyProfileProps) => {
                     <span className="font-satoshi font-semibold text-base text-gray-700 dark:text-white/80">
                         {t('imageLabel')}
                     </span>
-                    <div className="flex flex-col sm:flex-row items-center gap-14 bg-white rounded-lg p-3 mt-2 dark:bg-transparent dark:border">
+                    <div className="flex max-sm:flex-col sm:flex-row items-center gap-14 bg-white rounded-lg p-3 mt-2 dark:bg-transparent dark:border">
                         <Image
                             src={user.image as string}
                             alt="profile image"
