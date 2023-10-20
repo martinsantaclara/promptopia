@@ -1,0 +1,96 @@
+{
+    "App": {
+        "title": "Promptopia App",
+        "description": "By Javascript Mastery and Martin Santa Clara"
+    },
+    "HomePage": {
+        "title1": "Discover & Share",
+        "title2": "AI-Powered Prompts",
+        "description": "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts."
+    },
+    "FormFeed": {
+        "inputPlaceholder": "Search for a tag or a username"
+    },
+    "AboutPage": {
+        "title": "About Page",
+        "buttonText": "Sign Up With Google"
+    },
+    "Navbar": {
+        "action": "New Post",
+        "signout": "Sign out",
+        "signin": "Sign in",
+        "profile": "My Profile"
+    },
+    "Createpost": {
+        "title": "New Post",
+        "description": "A new post will be created",
+        "message1": "Your account",
+        "message2": "is not activated"
+    },
+    "Updatepost": {
+        "title": "Update Post",
+        "description": "A post will be updated",
+        "mess1NotCreator": "You are not",
+        "mess2NotCreator": "the creator",
+        "mess1NotExist": "The post",
+        "mess2NotExist": "does not exist"
+    },
+    "Profile": {
+        "title": "Profile",
+        "description": "This is the profile of ",
+        "message1": "You must",
+        "message2": "Sign in",
+        "head": "My Profile",
+        "subtitle": "Welcome to your personalized profile page.",
+        "nameLabel": "Name",
+        "activateLabel": "Activate Account",
+        "imageLabel": "Profile Image",
+        "loading": "Loading...",
+        "choice": "Choose image",
+        "draganddrop": "or drag and drop",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "cancelButton": "Cancel",
+        "updateButton": "Update",
+        "updating": "Updating..."
+    },
+    "Post": {
+        "title": "Posts",
+        "description": "These are the posts of ",
+        "name": "My",
+        "authorizedDesc": "Welcome to your posts. Share your exceptional prompts and inspire others with the power of your imagination"
+    },
+    "Error": {
+        "title": "Something went wrong!",
+        "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+    },
+    "NotFoundPage": {
+        "title": "Page not found",
+        "description": "Please double-check the browser address bar or use the navigation to go to a known page."
+    },
+    "LocaleLayout": {
+        "title": "next-intl example"
+    },
+    "LocaleSwitcher": {
+        "label": "Change language",
+        "locale": "{locale, select, en {English} es {Spanish} other {Unknown}}"
+    },
+    "Navigation": {
+        "home": "Home",
+        "about": "About"
+    },
+    "PageLayout": {
+        "links": {
+            "docs": {
+                "title": "Docs",
+                "description": "Learn more about next-intl in the official docs.",
+                "href": "https://next-intl-docs.vercel.app/"
+            },
+            "source": {
+                "title": "Source code",
+                "description": "Browse the source code of this example on GitHub.",
+                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-next-13"
+            }
+        }
+    }
+}
