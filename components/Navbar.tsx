@@ -77,7 +77,7 @@ const Navbar = ({navScrolled}: {navScrolled: boolean}) => {
                             <SwitchTheme theme={theme} setTheme={setTheme} />
                             <LocaleSwitcher />
                             {/* Desktop Navigation */}
-                            <div className="sm:flex hidden">
+                            <div className="max-sm:hidden sm:flex">
                                 {session?.user ? (
                                     <div className="flex gap-3 md:gap-5">
                                         <Link
@@ -125,7 +125,7 @@ const Navbar = ({navScrolled}: {navScrolled: boolean}) => {
                             </div>
 
                             {/* Mobile Navigation */}
-                            <div className="sm:hidden flex relative">
+                            <div className="max-sm:flex sm:hidden relative">
                                 {session?.user ? (
                                     <div className="flex">
                                         <Image
