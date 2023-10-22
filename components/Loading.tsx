@@ -10,7 +10,7 @@ type LoadingProps = {
 export default function Loading({data, total}: LoadingProps) {
     const length = total - data.length < 4 ? total - data.length : 4;
     return (
-        <div className="mt-16 prompt_layout grid sm:grid-cols-col2 lg:grid-cols-col3">
+        <div className="mt-16 prompt_layout grid sm:grid-cols-col2 min-[1152px]:grid-cols-col3">
             {data?.map((post, index) => (
                 <div className="relative" key={post.id}>
                     <div className="prompt_card">

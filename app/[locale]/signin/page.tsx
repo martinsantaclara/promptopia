@@ -314,7 +314,7 @@ export default function SignInPage() {
                 </div>
             </div>
             <div
-                className={`max-sm:hidden sm:block container ${
+                className={`max-sm:hidden sm:block containerSignin ${
                     rightPanel ? 'rightPanelActive' : ''
                 }`}
                 id="container"

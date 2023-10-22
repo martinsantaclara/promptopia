@@ -22,7 +22,7 @@ export default function PostCardList({
 }: CardProps) {
     return (
         <div>
-            <div className="mt-16 prompt_layout grid sm:grid-cols-col2 lg:grid-cols-col3">
+            <div className="mt-16 prompt_layout grid sm:grid-cols-col2 min-[1152px]:grid-cols-col3">
                 {data?.map((post, index) => (
                     <PostCard
                         key={post.id}

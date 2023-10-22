@@ -51,7 +51,7 @@ const Navbar = ({navScrolled}: {navScrolled: boolean}) => {
         <>
             {session !== undefined && (
                 <header
-                    className={`sticky top-0 w-full px-6 sm:px-16 py-4 mb-10 ${
+                    className={`sticky top-0 w-full max-sm:px-6 sm:px-16 py-4 mb-10 ${
                         navScrolled ? 'bg-white dark:bg-slate-800' : ''
                     }   z-50`}
                 >

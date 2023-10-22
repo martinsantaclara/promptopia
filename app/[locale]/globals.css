@@ -312,7 +312,7 @@
     width: 40px;
 }
 
-.container {
+.containerSignin {
     border-radius: 20px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
@@ -346,11 +346,11 @@
     z-index: 1;
 }
 
-.container.rightPanelActive .signInContainer {
+.containerSignin.rightPanelActive .signInContainer {
     transform: translateX(100%);
 }
 
-.container.rightPanelActive .signUpContainer {
+.containerSignin.rightPanelActive .signUpContainer {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
@@ -382,7 +382,7 @@
     z-index: 100;
 }
 
-.container.rightPanelActive .overlayContainer {
+.containerSignin.rightPanelActive .overlayContainer {
     transform: translateX(-100%);
 }
 
@@ -423,7 +423,7 @@
     transition: transform 0.6s ease-in-out;
 }
 
-.container.rightPanelActive .overlay_gradient {
+.containerSignin.rightPanelActive .overlay_gradient {
     transform: translateX(50%);
 }
 
@@ -446,7 +446,7 @@
     transform: translateX(-20%);
 }
 
-.container.rightPanelActive .overlayLeft {
+.containerSignin.rightPanelActive .overlayLeft {
     transform: translateX(0);
 }
 
@@ -455,7 +455,7 @@
     transform: translateX(0);
 }
 
-.container.rightPanelActive .overlayRight {
+.containerSignin.rightPanelActive .overlayRight {
     transform: translateX(20%);
 }
 
