@@ -3,6 +3,9 @@ import {setCookie} from '@/utils/setCookies';
 import prisma from '@/lib/prisma';
 import {Resend} from 'resend';
 import ResetPasswordTokenEmail from '@/emails/ResetPasswordTokenEmail';
+import {getCookie} from '@/utils/getCookie';
+import {createTranslator} from 'next-intl';
+import emailSubject from '@/emails/emailSubject';
 
 const resend = new Resend(process.env.SMTP_PASSWORD);
 
@@ -10,6 +13,9 @@ export async function POST(request: Request) {
     // get phone number and email from form payload
     const data = await request.json();
     const {email} = data;
+    const locale = (await getCookie('NEXT_LOCALE')) as string;
+    const messages = (await import(`@/messages/${locale}.json`)).default;
+    const t = createTranslator({locale, messages});
     // look up the user based on phone or email
     let user;
     if (email) {
@@ -22,7 +28,7 @@ export async function POST(request: Request) {
     } else {
         // neither an email nor phone number was submitted, re-direct and display error
         return NextResponse.json({
-            error: 'You must provide an email',
+            error: t('SendToken.emailError'),
         });
     }
 
@@ -40,12 +46,19 @@ export async function POST(request: Request) {
         await setCookie('resetPasswordEmail', email);
 
         const userName = user.name;
+        const greeting = t('ResetPasswordTokenEmail.greeting');
+        const heading = t('ResetPasswordTokenEmail.heading');
 
         await resend.emails.send({
             from: 'Promptopia <martinsantaclara@promptopia.com.ar>',
             to: email,
-            subject: 'Password Reset Token',
-            react: ResetPasswordTokenEmail({userName, token}),
+            subject: await emailSubject('ResetPasswordEmail'),
+            react: ResetPasswordTokenEmail({
+                userName,
+                token,
+                greeting,
+                heading,
+            }),
             text: 'Hello World',
         });
         return NextResponse.json({
@@ -54,7 +67,7 @@ export async function POST(request: Request) {
     } else {
         // redirect and display error
         return NextResponse.json({
-            error: 'We could not locate a user with that email address',
+            error: t('SendToken.userError'),
         });
     }
 }

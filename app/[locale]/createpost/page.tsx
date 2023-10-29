@@ -20,7 +20,9 @@ export default function CreatePostPage() {
 
     if (session && session.user.emailVerified) {
         post['creator'] = session.user.id;
-        return <Form type="Create" post={post} setPost={setPost} postId={0} />;
+        return (
+            <Form type={t('type')} post={post} setPost={setPost} postId={0} />
+        );
     } else if (session) {
         const path = `/profile`;
         return (

@@ -1,5 +1,4 @@
 import type {NextAuthOptions} from 'next-auth';
-import {cookies} from 'next/headers';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import EmailProvider from 'next-auth/providers/email';
@@ -14,6 +13,9 @@ import {updateEmailVerified} from '@/lib/actions';
 const cryptr = new Cryptr(process.env.NEXT_PUBLIC_KEY as string);
 const resend = new Resend(process.env.SMTP_PASSWORD);
 import ActivateAccountEmail from '@/emails/ActivateAccountEmail';
+import {getCookie} from '@/utils/getCookie';
+import emailSubject from '@/emails/emailSubject';
+import emailBody from '@/emails/emailBody';
 
 export const options: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
@@ -55,9 +57,8 @@ export const options: NextAuthOptions = {
                 //     password: 'nextauth',
                 //     email: 'nextauth@gmail.com',
                 // };
-                const cookieStore = cookies();
-                const access = cookieStore.get('access');
-
+                //const cookieStore = cookies();
+                const access = await getCookie('access');
                 const userExist = await prisma.user.findUnique({
                     where: {
                         email: credentials?.email!,
@@ -71,11 +72,11 @@ export const options: NextAuthOptions = {
                         );
 
                         if (
-                            access?.value === 'signIn' &&
+                            access === 'signIn' &&
                             decryptedPassword !== credentials?.password
                         ) {
                             throw new Error('incorrect-credentials'); // Redirect to error page
-                        } else if (access?.value === 'signUp') {
+                        } else if (access === 'signUp') {
                             throw new Error('existing-credentials'); // Redirect to error page
                         }
                         return userExist;
@@ -83,7 +84,7 @@ export const options: NextAuthOptions = {
                         throw new Error('existing-credentials-signin'); // Redirect to error page
                     }
                 } else {
-                    if (access?.value === 'signIn') {
+                    if (access === 'signIn') {
                         throw new Error('incorrect-credentials'); // Redirect to error page}
                     }
                 }
@@ -116,13 +117,19 @@ export const options: NextAuthOptions = {
                 provider: {server, from},
             }) {
                 let {host} = new URL(url);
-                const cookieStore = cookies();
-                const userName = cookieStore.get('userName')?.value;
+                const userName = await getCookie('userName');
+                const {greeting, heading, activate} = await emailBody();
                 await resend.emails.send({
                     from,
                     to: email,
-                    subject: `Confirm your account on Promptopia`,
-                    react: ActivateAccountEmail({userName, url}),
+                    subject: await emailSubject('ActivateEmail'),
+                    react: ActivateAccountEmail({
+                        userName,
+                        url,
+                        greeting,
+                        heading,
+                        activate,
+                    }),
                     text: text({url, host}),
                 });
             },
@@ -136,8 +143,7 @@ export const options: NextAuthOptions = {
     session: {strategy: 'jwt'},
     callbacks: {
         async signIn({profile, credentials, email, user, account}) {
-            const cookieStore = cookies();
-            const access = cookieStore.get('access');
+            const access = await getCookie('access');
             if (profile !== undefined) {
                 const userExist = await prisma.user.findUnique({
                     where: {
@@ -149,11 +155,11 @@ export const options: NextAuthOptions = {
                 //console.log('account', account);
                 //console.log('user', user);
 
-                if (!userExist && access?.value === 'signIn') {
+                if (!userExist && access === 'signIn') {
                     //throw new Error('Credentials Login Incorrect'); // Redirect to error page
                     throw new Error('nonexistent-account'); // Redirect to error page
                     //return false;
-                } else if (userExist && access?.value === 'signUp') {
+                } else if (userExist && access === 'signUp') {
                     throw new Error('existing-account'); // Redirect to error page
                 } else if (userExist) {
                     const accountExist = await prisma.account.findUnique({

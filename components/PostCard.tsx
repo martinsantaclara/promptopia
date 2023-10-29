@@ -8,7 +8,7 @@ import {timeAgo} from '@/utils/timeAgo';
 import {deletePost} from '@/lib/actions';
 import DialogBox from './DialogBox';
 import {useTheme} from 'next-themes';
-import {useLocale} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import Loading from '@/app/[locale]/loading';
 
 type PostProps = {
@@ -37,6 +37,7 @@ const PostCard = ({
     const router = useRouter();
     const locale = useLocale();
     const cardRef = useRef(null);
+    const t = useTranslations('PostCard');
 
     const handleCopy = () => {
         setCopied(true);
@@ -75,8 +76,6 @@ const PostCard = ({
         if (!cardRef?.current) return;
         const observer = new IntersectionObserver(([entry]) => {
             if (isLast && entry.isIntersecting) {
-                console.log((page + 1) * 4);
-                console.log(totalPosts);
                 if ((page + 1) * 4 < totalPosts) setPage(page + 1);
                 observer.unobserve(entry.target);
             }
@@ -161,7 +160,7 @@ const PostCard = ({
                                     className="font-inter text-sm green_gradient cursor-pointer"
                                     onClick={() => handleEdit(post)}
                                 >
-                                    Edit
+                                    {t('edit')}
                                 </p>
                                 <p
                                     className="font-inter text-sm orange_gradient cursor-pointer"
@@ -179,7 +178,7 @@ const PostCard = ({
                             } */
                                     onClick={() => setDialogBox(true)}
                                 >
-                                    Delete
+                                    {t('delete')}
                                 </p>
                             </div>
                         )}

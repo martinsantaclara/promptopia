@@ -25,9 +25,7 @@ export default function LocaleSwitcher() {
                 onClick={handleSwitcher}
                 className="relative w-8 h-8 bg-transparent"
                 data-tooltip-id="tooltip-switcher"
-                data-tooltip-content={
-                    locale === 'es' ? 'Cambiar a Inglés' : 'Change to Spanish'
-                }
+                data-tooltip-content={t('tooltipContent')}
                 data-tooltip-variant="info"
             >
                 {/* <div className="bg-white absolute w-8 h-8 rounded-full top-[4.5px] left-[4.2px]"></div> */}

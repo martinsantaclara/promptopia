@@ -17,11 +17,17 @@ import * as React from 'react';
 interface ActivateAccountEmailProps {
     userName: string | undefined;
     url: string;
+    greeting: string;
+    heading: string;
+    activate: string;
 }
 
 export const ActivateAccountEmail = ({
     userName = 'Panchito',
     url = '144833',
+    greeting,
+    heading,
+    activate,
 }: ActivateAccountEmailProps) => (
     <Html>
         <Head />
@@ -52,19 +58,15 @@ export const ActivateAccountEmail = ({
                             </Text>
                         </Column>
                     </Row>
-                    <Text style={tertiary}>{`Hi ${userName},`}</Text>
-                    <Heading style={secondary}>
-                        Thank you for signing up for Promptopia. Your account
-                        has been created and must now be activated within 24
-                        hours - click the button below:
-                    </Heading>
+                    <Text style={tertiary}>{`${greeting} ${userName},`}</Text>
+                    <Heading style={secondary}>{heading}</Heading>
                     <Section className="text-center mt-[32px] mb-[32px]">
                         <Button
                             pY={16}
                             className="rounded-full border border-black bg-black text-white text-lg w-[150px] text-center"
                             href={url}
                         >
-                            Activate
+                            {activate}
                         </Button>
                     </Section>
                 </Container>

@@ -71,7 +71,7 @@ const MyProfile = ({data, pass}: MyProfileProps) => {
                             setUser({...user, name: e.target.value})
                         }
                         type="text"
-                        placeholder="Name"
+                        placeholder={t('nameLabel')}
                         required
                         className="form_input dark:text-white/70"
                     />

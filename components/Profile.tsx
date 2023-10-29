@@ -16,25 +16,22 @@ const Profile = ({userName, authorized, locale, data}: ProfileProps) => {
     const handleTagClick = () => {};
     const t = useTranslations('Post');
 
-    const name = authorized
-        ? t('name')
-        : locale === 'es'
-        ? 'Posts de '
-        : (userName as string);
+    const title1 = authorized
+        ? t('authorizedTitle1')
+        : t('notAuthorizedTitle1', {
+              name: locale === 'es' ? 'Posts de ' : userName + "'s",
+          });
+    const title2 = !authorized && locale === 'es' ? userName : 'Posts';
     const desc = authorized
         ? t('authorizedDesc')
-        : locale === 'es'
-        ? `Bienvenido a los posts de ${userName}. Explore los excepcionales prompts de ${userName} y será inspirado por el poder de su imaginación`
-        : `Welcome to ${userName}'s posts. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`;
+        : t('notAuthorizedDesc', {userName: userName});
     return (
         <section className="w-full">
             <h1 className="head_text text-left dark:text-white">
-                {name}
-                {authorized ? '' : locale === 'es' ? '' : <span>&apos;s</span>}
+                {title1}
+                {/* {authorized ? '' : locale === 'es' ? '' : <span>&apos;s</span>} */}
                 {authorized ? <span>&nbsp;</span> : <br />}
-                <span className="blue_gradient">
-                    {!authorized && locale === 'es' ? userName : 'Posts'}
-                </span>
+                <span className="blue_gradient">{title2}</span>
             </h1>
             <p className="desc text-left dark:text-dark-subtitle">{desc}</p>
             <div className="mt-10 prompt_layout grid sm:grid-cols-col2 lg:grid-cols-col3">

@@ -1,4 +1,5 @@
 'use client';
+import {useTranslations} from 'next-intl';
 import {useRouter} from 'next/navigation';
 import {FormEvent, useState} from 'react';
 
@@ -21,6 +22,7 @@ async function sendToken(payload: Payload) {
 export default function ForgotPasswordPage() {
     const router = useRouter();
     const [error, setError] = useState();
+    const t = useTranslations('ForgotPassword');
 
     async function onForgotPassword(event: any) {
         event.preventDefault();
@@ -51,15 +53,14 @@ export default function ForgotPasswordPage() {
                     </div>
                 )}
                 <div className="mb-4 text-black dark:text-white">
-                    Please use the same email address that you used to create
-                    your user
+                    {t('text')}
                 </div>
                 <div className="mb-4">
                     <label
                         htmlFor="email"
                         className="block text-gray-700 text-sm font-bold mb-2 dark:text-white/70"
                     >
-                        Email Address
+                        {t('label')}
                     </label>
                     <input
                         type="email"
@@ -72,7 +73,7 @@ export default function ForgotPasswordPage() {
 
                 <input
                     type="submit"
-                    value="Reset Password"
+                    value={t('action')}
                     className="outline_btn !py-2 px-4 cursor-pointer rounded focus:outline-none focus:shadow-outline  dark:bg-white dark:hover:bg-black"
                 ></input>
             </form>

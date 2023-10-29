@@ -1,12 +1,11 @@
 'use client';
-import Link from 'next/link';
 import {SetStateAction, useState, useTransition} from 'react';
 import {Dispatch} from 'react';
-import {FormEvent} from 'react';
 import {useRouter} from 'next/navigation';
 import {createPost, updatePost} from '@/lib/actions';
 import Image from 'next/image';
 import {toast} from 'sonner';
+import {useLocale, useTranslations} from 'next-intl';
 
 type Props = {
     type: string;
@@ -26,10 +25,10 @@ type Props = {
 };
 
 const Form = ({type, post, setPost, postId}: Props) => {
-    let [isPending, startTransition] = useTransition();
-
     const router = useRouter();
     const [submitting, setSubmitting] = useState(false);
+    const t = useTranslations('Form');
+    const locale = useLocale();
 
     const handleCancel = () => {
         router.back();
@@ -41,8 +40,14 @@ const Form = ({type, post, setPost, postId}: Props) => {
                 <span className="blue_gradient">{type} Post</span>
             </h1>
             <p className="desc text-left max-w-md dark:text-dark-subtitle">
-                {type} and share amazing prompts with the world, and let your
-                imagination run wild with any AI-powered platform
+                {t('subtitle', {
+                    type:
+                        locale === 'es'
+                            ? type === 'Crear'
+                                ? 'Crea'
+                                : 'Edita'
+                            : type,
+                })}
             </p>
 
             <form
@@ -55,16 +60,20 @@ const Form = ({type, post, setPost, postId}: Props) => {
                                 ? post['tag']
                                 : '#' + post['tag'];
                         try {
-                            type === 'Edit'
+                            type.slice(0, 4) === 'Edit'
                                 ? await updatePost(postId, post)
                                 : await createPost(post);
                             toast.success(
-                                `Post has been ${
-                                    type === 'Edit' ? 'updated' : 'created'
-                                }`,
-                                {
-                                    className: 'toast',
-                                }
+                                t('success', {
+                                    type:
+                                        type.slice(0, 4) === 'Edit'
+                                            ? locale === 'es'
+                                                ? 'actualizado'
+                                                : 'updated'
+                                            : locale === 'es'
+                                            ? 'creado'
+                                            : 'created',
+                                })
                             );
                             router.refresh();
                             //router.back();
@@ -72,9 +81,7 @@ const Form = ({type, post, setPost, postId}: Props) => {
                                 `/profile/${post.creator}?authorized=true`
                             );
                         } catch (error) {
-                            toast.error(
-                                'An error has occurred, the action has not been completed'
-                            );
+                            toast.error(t('error'));
                             console.log(error);
                         }
                     };
@@ -83,7 +90,7 @@ const Form = ({type, post, setPost, postId}: Props) => {
             >
                 <label>
                     <span className="font-satoshi font-semibold text-base text-gray-700 dark:text-white/80">
-                        Your AI Prompt
+                        {t('promptLabel')}
                     </span>
 
                     <textarea
@@ -91,7 +98,7 @@ const Form = ({type, post, setPost, postId}: Props) => {
                         onChange={(e) =>
                             setPost({...post, prompt: e.target.value})
                         }
-                        placeholder="Write your post here"
+                        placeholder={t('promptPlaceholder')}
                         className="form_textarea dark:text-white/70"
                         required
                     />
@@ -99,10 +106,8 @@ const Form = ({type, post, setPost, postId}: Props) => {
 
                 <label>
                     <span className="font-satoshi font-semibold text-base text-gray-700 dark:text-white/80">
-                        Field of Prompt{' '}
-                        <span className="font-normal">
-                            (#product, #webdevelopment, #idea, etc.)
-                        </span>
+                        {t('fieldLabel')}{' '}
+                        <span className="font-normal">{t('fieldTag')}</span>
                     </span>
                     <input
                         value={post.tag}
@@ -110,7 +115,7 @@ const Form = ({type, post, setPost, postId}: Props) => {
                             setPost({...post, tag: e.target.value})
                         }
                         type="text"
-                        placeholder="#Tag"
+                        placeholder={t('fieldPlaceholder')}
                         className="form_input dark:text-white/70"
                         required
                     />
@@ -128,7 +133,7 @@ const Form = ({type, post, setPost, postId}: Props) => {
                         className="text-gray-500 hover:text-gray-900 text-sm dark:text-white/70 dark:hover:text-white/90"
                         onClick={handleCancel}
                     >
-                        Cancel
+                        {t('cancelButton')}
                     </button>
 
                     <button
@@ -163,10 +168,26 @@ const Form = ({type, post, setPost, postId}: Props) => {
                             />
                         ) : null}
                         {submitting
-                            ? `${type === 'Edit' ? 'Upd' : 'Cre'}ating...`
-                            : type === 'Edit'
-                            ? 'Update'
-                            : type}
+                            ? t('submitting', {
+                                  type:
+                                      type.slice(0, 4) === 'Edit'
+                                          ? locale === 'es'
+                                              ? 'Actualizando...'
+                                              : 'Updating...'
+                                          : locale === 'es'
+                                          ? 'Creando...'
+                                          : 'Creating...',
+                              })
+                            : t('okButton', {
+                                  type:
+                                      type.slice(0, 4) === 'Edit'
+                                          ? locale === 'es'
+                                              ? 'Actualizar'
+                                              : 'Update'
+                                          : locale === 'es'
+                                          ? 'Crear'
+                                          : 'Create',
+                              })}
                     </button>
                 </div>
             </form>

@@ -15,11 +15,15 @@ import * as React from 'react';
 interface ResetPasswordTokenEmailProps {
     userName: string | null;
     token?: string;
+    greeting: string;
+    heading: string;
 }
 
 export const ResetPasswordTokenEmail = ({
     userName = 'Panchito',
     token = '144833',
+    greeting,
+    heading,
 }: ResetPasswordTokenEmailProps) => (
     <Html>
         <Head />
@@ -28,7 +32,7 @@ export const ResetPasswordTokenEmail = ({
                 <Row style={{marginLeft: '16px', marginBottom: '64px'}}>
                     <Column style={{width: '32px'}}>
                         <Img
-                            src="https://www.promptopia.com.ar/assets/images/es.png"
+                            src="https://www.promptopia.com.ar/assets/images/logo.png"
                             alt="Promptopia logo"
                             width="32"
                             height="32"
@@ -48,10 +52,8 @@ export const ResetPasswordTokenEmail = ({
                     </Column>
                 </Row>
 
-                <Text style={tertiary}>{`Hi ${userName},`}</Text>
-                <Heading style={secondary}>
-                    This is your password reset token
-                </Heading>
+                <Text style={tertiary}>{`${greeting} ${userName},`}</Text>
+                <Heading style={secondary}>{heading}</Heading>
                 <Section style={codeContainer}>
                     <Text style={code}>{token}</Text>
                 </Section>

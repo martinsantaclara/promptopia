@@ -1,5 +1,9 @@
+import {useLocale, useTranslations} from 'next-intl';
+
 export const timeAgo = (nowTime: Date, previousTime: Date) => {
     const seconds = (nowTime.valueOf() - previousTime.valueOf()) / 1000;
+    const t = useTranslations('TimeAgo');
+    const locale = useLocale();
 
     let time = '';
     let minutes,
@@ -10,19 +14,23 @@ export const timeAgo = (nowTime: Date, previousTime: Date) => {
 
     switch (true) {
         case seconds < 60:
-            time = 'ahora';
+            time = t('now');
             break;
         case seconds < 3600:
             minutes = Math.trunc(seconds / 60);
-            time = `hace ${minutes} minuto${minutes > 1 ? 's' : ''}`;
+            time = `${locale === 'es' ? t('ago') : ''} ${minutes} ${t(
+                'minute'
+            )}${minutes > 1 ? 's' : ''} ${locale === 'es' ? '' : t('ago')}`;
             break;
         case seconds < 86400:
             hours = Math.trunc(seconds / 3600);
             minutes = Math.round((seconds % 3600) / 60);
             hours += minutes === 60 ? 1 : 0;
             minutes = minutes === 60 ? 0 : minutes;
-            time = `hace ${hours} hora${hours > 1 ? 's' : ''} ${
-                minutes > 0 ? minutes + ' min' : ''
+            time = `${locale === 'es' ? t('ago') : ''} ${hours} ${t('hour')}${
+                hours > 1 ? 's' : ''
+            } ${minutes > 0 ? minutes + ' min' : ''} ${
+                locale === 'es' ? '' : t('ago')
             }`;
             break;
         default:
@@ -32,8 +40,10 @@ export const timeAgo = (nowTime: Date, previousTime: Date) => {
                 hours = Math.round((rawDay - Math.trunc(rawDay)) * 24);
                 days += hours === 24 ? 1 : 0;
                 hours = hours === 24 ? 0 : hours;
-                time = `hace ${days} día${days > 1 ? 's' : ''} ${
-                    hours > 0 ? hours + ' h' + (hours > 1 ? 's' : '') : ''
+                time = `${locale === 'es' ? t('ago') : ''} ${days} ${t('day')}${
+                    days > 1 ? 's' : ''
+                } ${hours > 0 ? hours + ' h' + (hours > 1 ? 's' : '') : ''} ${
+                    locale === 'es' ? '' : t('ago')
                 }`;
             } else if (rawDay < 365) {
                 const rawMonth = (rawDay / 365) * 12;
@@ -41,16 +51,25 @@ export const timeAgo = (nowTime: Date, previousTime: Date) => {
                 days = Math.round((rawMonth - Math.trunc(rawMonth)) * 30);
                 months += days === 30 ? 1 : 0;
                 days = days === 30 ? 0 : days;
-                time = `hace ${months} mes${months > 1 ? 'es' : ''} ${
+                time = `${locale === 'es' ? t('ago') : ''} ${months} ${t(
+                    'month'
+                )}${months > 1 ? (locale === 'es' ? 'es' : 's') : ''} ${
                     days > 0 ? days + ' d' : ''
-                }`;
+                } ${locale === 'es' ? '' : t('ago')}`;
             } else {
                 const rawYear = rawDay / 365;
                 years = Math.trunc(rawYear);
                 months = Math.trunc((rawYear - Math.trunc(rawYear)) * 12);
-                time = `hace ${years} año${years > 1 ? 's' : ''} ${
-                    months > 0 ? months + ' mes' + (months > 1 ? 'es' : '') : ''
-                }`;
+                time = `${locale === 'es' ? t('ago') : ''} ${years} ${t(
+                    'year'
+                )}${years > 1 ? 's' : ''} ${
+                    months > 0
+                        ? months +
+                          ' ' +
+                          t('month') +
+                          (months > 1 ? (locale === 'es' ? 'es' : 's') : '')
+                        : ''
+                } ${locale === 'es' ? '' : t('ago')}`;
             }
             break;
     }

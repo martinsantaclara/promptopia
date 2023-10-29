@@ -1,7 +1,7 @@
 'use client';
+import {useTranslations} from 'next-intl';
 import {useRouter} from 'next/navigation';
-import {useState} from 'react';
-import {toast} from 'sonner';
+import {useState, useTransition} from 'react';
 
 type Payload = {
     token: FormDataEntryValue | null;
@@ -19,6 +19,7 @@ async function verifyToken(payload: Payload) {
 export default function EnterTokenPage() {
     const router = useRouter();
     const [error, setError] = useState();
+    const t = useTranslations('EnterToken');
 
     async function onVerifyToken(event: any) {
         event.preventDefault();
@@ -30,7 +31,6 @@ export default function EnterTokenPage() {
         if (response.error) {
             setError(response.error);
         } else if (response.redirect) {
-            toast.success('The password has been changed successfully!');
             router.push(response.redirect);
         }
         return true;
@@ -49,8 +49,7 @@ export default function EnterTokenPage() {
                     </div>
                 )}
                 <div className="mb-4 text-black dark:text-white">
-                    Check your email and enter token that we have sent you
-                    below.{' '}
+                    {t('text')}{' '}
                 </div>
                 <div className="mb-4">
                     <label
@@ -71,7 +70,7 @@ export default function EnterTokenPage() {
                 </div>
                 <input
                     type="submit"
-                    value="Validate Token"
+                    value={t('action')}
                     className="outline_btn !py-2 px-4 cursor-pointer rounded focus:outline-none focus:shadow-outline dark:bg-white dark:hover:bg-black"
                 ></input>
             </form>

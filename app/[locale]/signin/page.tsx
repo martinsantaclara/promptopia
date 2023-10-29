@@ -1,9 +1,7 @@
 'use client';
-//import {handleSignIn, handleSignUp} from '@/lib/actions';
-import handleSignInForm from '@/utils/handleSignIn';
 import {setCookie} from '@/utils/setCookies';
 import {signIn} from 'next-auth/react';
-import {useLocale} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import {useRouter} from 'next/navigation';
 import React, {FormEvent, useState, useTransition} from 'react';
 
@@ -16,6 +14,7 @@ export default function SignInPage() {
     const locale = useLocale();
     const [signInActive, setSignInActive] = useState(true);
     const router = useRouter();
+    const t = useTranslations('Signin');
     const handleSign = () => {
         setSignInActive((prev) => !prev);
     };
@@ -74,7 +73,7 @@ export default function SignInPage() {
                         action={(formData) => handleSignIn(formData)}
                         //action={handleSignIn}
                     >
-                        <h1 className="h1">Sign in</h1>
+                        <h1 className="h1">{t('signin')}</h1>
                         <div className="socialContainer !my-[10px]">
                             <button
                                 className="a social dark:text-white"
@@ -89,7 +88,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign In with Github"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Github',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGithub size={24} />
@@ -107,7 +108,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign In with Google"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Google',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGoogle size={24} />
@@ -125,13 +128,15 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign In with Linkedin"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Linkedin',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaLinkedinIn size={24} />
                             </button>
                         </div>
-                        <span className="span mt-0">or use your account</span>
+                        <span className="span mt-0">{t('emailSignin')}</span>
                         <div className="glassmorphism mt-2.5 w-[95%] !p-4">
                             <input
                                 className="form_input !mt-0 dark:text-white"
@@ -143,7 +148,7 @@ export default function SignInPage() {
                             />
                             <input
                                 type="password"
-                                placeholder="Password"
+                                placeholder={t('passwordPlaceholder')}
                                 id="inputPassword"
                                 className="form_input dark:text-white"
                                 name="password"
@@ -154,13 +159,13 @@ export default function SignInPage() {
                             className="a m-[10px] dark:text-white/70 hover:text-blue-300 dark:hover:text-blue-300"
                             href="/resetPassword/forgotpassword"
                         >
-                            Forgot your password?
+                            {t('forgotPassword')}
                         </a>
                         <button
                             type="submit"
                             className="button mt-[10px] hover:bg-primary-orange/80"
                         >
-                            Sign in
+                            {t('signinSubmit')}
                         </button>
                     </form>
                 </div>
@@ -178,7 +183,7 @@ export default function SignInPage() {
                         action={(formData) => handleSignUp(formData)}
                         //action={handleSignUp}
                     >
-                        <h1 className="h1">Create Account</h1>
+                        <h1 className="h1">{t('create')}</h1>
                         <div className="socialContainer !my-0[10px]">
                             <button
                                 className="a social dark:text-white"
@@ -193,7 +198,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Github"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Github',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGithub size={24} />
@@ -211,7 +218,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Google"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Google',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGoogle size={24} />
@@ -229,21 +238,21 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Linkedin"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Linkedin',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaLinkedinIn size={24} />
                             </button>
                         </div>
-                        <span className="span mt-0">
-                            or use your email for registration
-                        </span>
+                        <span className="span mt-0">{t('emailSignup')}</span>
 
                         <div className="glassmorphism mt-2.5 w-[95%] !p-4">
                             <input
                                 className="form_input !mt-0 dark:text-white"
                                 type="text"
-                                placeholder="Name"
+                                placeholder={t('namePlaceholder')}
                                 name="name"
                             />
 
@@ -257,7 +266,7 @@ export default function SignInPage() {
                             <input
                                 className="form_input dark:text-white"
                                 type="password"
-                                placeholder="Password"
+                                placeholder={t('passwordPlaceholder')}
                                 name="password"
                                 required
                             />
@@ -266,7 +275,7 @@ export default function SignInPage() {
                             className="button mt-[10px] hover:bg-primary-orange/80"
                             type="submit"
                         >
-                            Sign Up
+                            {t('signup')}
                         </button>
                     </form>
                 </div>
@@ -278,37 +287,35 @@ export default function SignInPage() {
                             !signInActive
                                 ? '-translate-y-full'
                                 : 'translate-y-full'
-                        } transition ease-in-out delay-100 duration-1000 py-4 px-12 flex flex-col justify-between items-center`}
+                        } transition ease-in-out delay-100 duration-1000 py-4 px-8 flex flex-col justify-between items-center`}
                     >
-                        <h1 className="h1">Welcome Back!</h1>
-                        <p className="p !m-0">
-                            To keep connected with us please login with your
-                            personal info
+                        <h1 className="h1">{t('signinWelcome')}</h1>
+                        <p className="p !m-0 text-center">
+                            {t('signinMessage')}
                         </p>
                         <button
                             className="button ghost hover:bg-primary-orange/80"
                             id="signIn"
                             onClick={handleSign}
                         >
-                            Sign in{' '}
+                            {t('signinSubmit')}
                         </button>
                     </div>
                     <div
                         className={`w-full h-1/2  absolute -z-20 top-0 ${
                             signInActive ? 'opacity-100' : 'opacity-0'
-                        } transition ease-in-out delay-100 duration-1000 py-4 px-12 flex flex-col justify-between items-center`}
+                        } transition ease-in-out delay-100 duration-1000 py-4 px-8 flex flex-col justify-between items-center`}
                     >
-                        <h1 className="h1">Hello, Friend!</h1>
-                        <p className="p !m-0">
-                            Enter your personal details and start journey with
-                            us
+                        <h1 className="h1">{t('signupWelcome')}</h1>
+                        <p className="p !m-0 text-center">
+                            {t('signupMessage')}
                         </p>
                         <button
                             className="button ghost hover:bg-primary-orange/80"
                             id="signUp"
                             onClick={handleSign}
                         >
-                            Sign Up
+                            {t('signup')}
                         </button>
                     </div>{' '}
                 </div>
@@ -320,6 +327,113 @@ export default function SignInPage() {
                 id="container"
             >
                 {/* <div className="mainG" /> */}
+
+                <div className="formContainer signInContainer">
+                    <div className="absolute w-full h-full top-0 bg-white/5" />
+                    {/* <!-- Sign In form code goes here --> */}
+                    <form
+                        className={`form ${
+                            rightPanel ? 'opacity-0' : 'opacity-100'
+                        } relative z-10`}
+                        action={(formData) => handleSignIn(formData)}
+                        //action={handleSignIn}
+                    >
+                        <h1 className="h1">{t('signin')}</h1>
+                        <div className="socialContainer">
+                            <button
+                                className="a social dark:text-white"
+                                onClick={(e) => {
+                                    startTransition(async () => {
+                                        e.preventDefault();
+                                        await setCookie('access', 'signIn');
+                                        signIn('github', {
+                                            callbackUrl: `/${locale}`,
+                                        });
+                                        //router.back();
+                                    });
+                                }}
+                                name="socialIcons"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Github',
+                                })}
+                                data-tooltip-variant="info"
+                            >
+                                <FaGithub size={24} />
+                            </button>
+                            <button
+                                className="a social dark:text-white"
+                                onClick={(e) => {
+                                    startTransition(async () => {
+                                        e.preventDefault();
+                                        await setCookie('access', 'signIn');
+                                        signIn('google', {
+                                            callbackUrl: `/${locale}`,
+                                        });
+                                        //router.back();
+                                    });
+                                }}
+                                name="socialIcons"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Google',
+                                })}
+                                data-tooltip-variant="info"
+                            >
+                                <FaGoogle size={24} />
+                            </button>
+                            <button
+                                className="a social dark:text-white"
+                                onClick={(e) => {
+                                    startTransition(async () => {
+                                        e.preventDefault();
+                                        await setCookie('access', 'signIn');
+                                        signIn('linkedin', {
+                                            callbackUrl: `/${locale}`,
+                                        });
+                                        //router.back();
+                                    });
+                                }}
+                                name="socialIcons"
+                                data-tooltip-content={t('signinSocial', {
+                                    social: 'Linkedin',
+                                })}
+                                data-tooltip-variant="info"
+                            >
+                                <FaLinkedinIn size={24} />
+                            </button>
+                        </div>
+                        <span className="span mt-4">{t('emailSignin')}</span>
+                        <div className="glassmorphism mt-2.5 w-[125%]">
+                            <input
+                                className="form_input !mt-0 dark:text-white"
+                                type="email"
+                                placeholder="Email"
+                                id="inputEmail"
+                                name="email"
+                                required
+                            />
+                            <input
+                                type="password"
+                                placeholder={t('passwordPlaceholder')}
+                                id="inputPassword"
+                                className="form_input dark:text-white"
+                                name="password"
+                                required
+                            />
+                        </div>
+                        <a
+                            className="a hover:text-blue-300 dark:text-white/70 dark:hover:text-blue-300"
+                            href="/resetPassword/forgotpassword"
+                        >
+                            {t('forgotPassword')}
+                        </a>
+                        <button
+                            type="submit"
+                            className="button mt-[22px] hover:bg-primary-orange/80"
+                        >
+                            {t('signinSubmit')}
+                        </button>
+                    </form>
+                </div>
                 <div className="formContainer signUpContainer">
                     <div className="absolute w-full h-full top-0 bg-white/5" />
 
@@ -331,7 +445,7 @@ export default function SignInPage() {
                         action={(formData) => handleSignUp(formData)}
                         //action={handleSignUp}
                     >
-                        <h1 className="h1">Create Account</h1>
+                        <h1 className="h1">{t('create')}</h1>
                         <div className="socialContainer">
                             <button
                                 className="a social dark:text-white"
@@ -346,7 +460,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Github"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Github',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGithub size={24} />
@@ -364,7 +480,9 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Google"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Google',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaGoogle size={24} />
@@ -382,21 +500,21 @@ export default function SignInPage() {
                                     });
                                 }}
                                 name="socialIcons"
-                                data-tooltip-content="Sign Up with Linkedin"
+                                data-tooltip-content={t('signupSocial', {
+                                    social: 'Linkedin',
+                                })}
                                 data-tooltip-variant="info"
                             >
                                 <FaLinkedinIn size={24} />
                             </button>
                         </div>
-                        <span className="span mt-4">
-                            or use your email for registration
-                        </span>
+                        <span className="span mt-4">{t('emailSignup')}</span>
 
                         <div className="glassmorphism mt-2.5 mb-5 w-[125%]">
                             <input
                                 className="form_input !mt-0 dark:text-white"
                                 type="text"
-                                placeholder="Name"
+                                placeholder={t('namePlaceholder')}
                                 name="name"
                             />
 
@@ -410,7 +528,7 @@ export default function SignInPage() {
                             <input
                                 className="form_input dark:text-white"
                                 type="password"
-                                placeholder="Password"
+                                placeholder={t('passwordPlaceholder')}
                                 name="password"
                                 required
                             />
@@ -420,139 +538,33 @@ export default function SignInPage() {
                             className="button hover:bg-primary-orange/80"
                             type="submit"
                         >
-                            Sign Up
-                        </button>
-                    </form>
-                </div>
-                <div className="formContainer signInContainer">
-                    <div className="absolute w-full h-full top-0 bg-white/5" />
-                    {/* <!-- Sign In form code goes here --> */}
-                    <form
-                        className={`form ${
-                            rightPanel ? 'opacity-0' : 'opacity-100'
-                        } relative z-10`}
-                        action={(formData) => handleSignIn(formData)}
-                        //action={handleSignIn}
-                    >
-                        <h1 className="h1">Sign in</h1>
-                        <div className="socialContainer">
-                            <button
-                                className="a social dark:text-white"
-                                onClick={(e) => {
-                                    startTransition(async () => {
-                                        e.preventDefault();
-                                        await setCookie('access', 'signIn');
-                                        signIn('github', {
-                                            callbackUrl: `/${locale}`,
-                                        });
-                                        //router.back();
-                                    });
-                                }}
-                                name="socialIcons"
-                                data-tooltip-content="Sign In with Github"
-                                data-tooltip-variant="info"
-                            >
-                                <FaGithub size={24} />
-                            </button>
-                            <button
-                                className="a social dark:text-white"
-                                onClick={(e) => {
-                                    startTransition(async () => {
-                                        e.preventDefault();
-                                        await setCookie('access', 'signIn');
-                                        signIn('google', {
-                                            callbackUrl: `/${locale}`,
-                                        });
-                                        //router.back();
-                                    });
-                                }}
-                                name="socialIcons"
-                                data-tooltip-content="Sign In with Google"
-                                data-tooltip-variant="info"
-                            >
-                                <FaGoogle size={24} />
-                            </button>
-                            <button
-                                className="a social dark:text-white"
-                                onClick={(e) => {
-                                    startTransition(async () => {
-                                        e.preventDefault();
-                                        await setCookie('access', 'signIn');
-                                        signIn('linkedin', {
-                                            callbackUrl: `/${locale}`,
-                                        });
-                                        //router.back();
-                                    });
-                                }}
-                                name="socialIcons"
-                                data-tooltip-content="Sign In with Linkedin"
-                                data-tooltip-variant="info"
-                            >
-                                <FaLinkedinIn size={24} />
-                            </button>
-                        </div>
-                        <span className="span mt-4">or use your account</span>
-                        <div className="glassmorphism mt-2.5 w-[125%]">
-                            <input
-                                className="form_input !mt-0 dark:text-white"
-                                type="email"
-                                placeholder="Email"
-                                id="inputEmail"
-                                name="email"
-                                required
-                            />
-                            <input
-                                type="password"
-                                placeholder="Password"
-                                id="inputPassword"
-                                className="form_input dark:text-white"
-                                name="password"
-                                required
-                            />
-                        </div>
-                        <a
-                            className="a hover:text-blue-300 dark:text-white/70 dark:hover:text-blue-300"
-                            href="/resetPassword/forgotpassword"
-                        >
-                            Forgot your password?
-                        </a>
-                        <button
-                            type="submit"
-                            className="button mt-[22px] hover:bg-primary-orange/80"
-                        >
-                            Sign in
+                            {t('signup')}
                         </button>
                     </form>
                 </div>
                 <div className="overlayContainer">
                     {/* <!-- The overlay code goes here --> */}
                     <div className="overlay_gradient">
-                        <div className="overlayPanel overlayLeft">
-                            <h1 className="h1">Welcome Back!</h1>
-                            <p className="p">
-                                To keep connected with us please login with your
-                                personal info
-                            </p>
+                        <div className="overlayPanel !px-12 overlayLeft">
+                            <h1 className="h1">{t('signinWelcome')}</h1>
+                            <p className="p">{t('signinMessage')}</p>
                             <button
                                 className="button ghost hover:bg-primary-orange/80"
                                 id="signIn"
                                 onClick={() => clickSignIn()}
                             >
-                                Sign in
+                                {t('signinSubmit')}
                             </button>
                         </div>
-                        <div className="overlayPanel overlayRight">
-                            <h1 className="h1">Hello, Friend!</h1>
-                            <p className="p">
-                                Enter your personal details and start journey
-                                with us
-                            </p>
+                        <div className="overlayPanel !px-12 overlayRight">
+                            <h1 className="h1">{t('signupWelcome')}</h1>
+                            <p className="p">{t('signupMessage')}</p>
                             <button
                                 className="button ghost hover:bg-primary-orange/80"
                                 id="signUp"
                                 onClick={() => clickSignUp()}
                             >
-                                Sign Up
+                                {t('signup')}
                             </button>
                         </div>
                     </div>

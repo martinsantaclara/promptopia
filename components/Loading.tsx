@@ -73,16 +73,20 @@ export default function Loading({data, total}: LoadingProps) {
                                 >
                                     <div className="rounded-full w-[50px] h-[40px] bg-gray-500" />
                                     <div className="flex flex-col w-full gap-2">
-                                        <h3 className="h-[16px] bg-gray-400"></h3>
-                                        <p className="h-[8px] bg-gray-400"></p>
+                                        <h3 className="h-[16px] bg-gray-400 rounded-xl"></h3>
+                                        <p className="h-[8px] bg-gray-400 rounded-xl"></p>
                                     </div>
                                 </div>
                                 <div className="copy_btn">
                                     <div className="rounded-full w-[12px] h-[12px] bg-gray-400"></div>
                                 </div>
                             </div>
-                            <p className="my-4 h-8 bg-gray-400"></p>
-                            <p className="h-3 w-1/2 bg-gray-400"></p>
+                            <p className="my-4 h-8 bg-gray-400  rounded-xl"></p>
+
+                            <div className="flex justify-between">
+                                <p className="h-3 w-1/2 bg-gray-400  rounded-xl"></p>
+                                <p className="h-3 w-1/4 bg-gray-400  rounded-xl"></p>
+                            </div>
                         </div>
                     </div>
                 </div>

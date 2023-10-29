@@ -1,6 +1,8 @@
 'use client';
+import {useTranslations} from 'next-intl';
 import {useRouter} from 'next/navigation';
 import {useState} from 'react';
+import {toast} from 'sonner';
 
 type Payload = {
     newPassword: FormDataEntryValue | null;
@@ -19,6 +21,7 @@ async function resetPassword(payload: Payload) {
 export default function NewPasswordPage() {
     const router = useRouter();
     const [error, setError] = useState();
+    const t = useTranslations('NewPassword');
 
     async function onResetPassword(event: any) {
         event.preventDefault();
@@ -31,6 +34,7 @@ export default function NewPasswordPage() {
         if (response.error) {
             setError(response.error);
         } else if (response.redirect) {
+            toast.success(t('success'));
             router.push('/api/auth/signin');
         }
         return true;
@@ -49,14 +53,14 @@ export default function NewPasswordPage() {
                     </div>
                 )}
                 <div className="mb-4 text-black dark:text-white">
-                    Almost done! Now just enter a new password.
+                    {t('text')}
                 </div>
                 <div className="mb-4">
                     <label
                         htmlFor="new_password"
                         className="block text-gray-700 text-sm font-bold mb-2 dark:text-white/70"
                     >
-                        New Password
+                        {t('password')}
                     </label>
                     <input
                         type="password"
@@ -72,7 +76,7 @@ export default function NewPasswordPage() {
                         htmlFor="new_password_confirm"
                         className="block text-gray-700 text-sm font-bold mb-2 dark:text-white/70"
                     >
-                        Confirm Password
+                        {t('confirmPassword')}
                     </label>
                     <input
                         type="password"
@@ -85,7 +89,7 @@ export default function NewPasswordPage() {
                 </div>
                 <input
                     type="submit"
-                    value="Reset Password"
+                    value={t('action')}
                     className="outline_btn !py-2 px-4 cursor-pointer rounded focus:outline-none focus:shadow-outline dark:bg-white dark:hover:bg-black"
                 ></input>
             </form>

@@ -3,6 +3,7 @@ import Form from '@/components/Form';
 import {post} from '@prisma/client';
 import {FormEvent, useState} from 'react';
 import {useRouter} from 'next/navigation';
+import {useTranslations} from 'next-intl';
 
 type Props = {
     post: post;
@@ -10,6 +11,7 @@ type Props = {
 
 export default function UpdateComponents({post}: Props) {
     const router = useRouter();
+    const t = useTranslations('Updatepost');
     const [postData, setPostData] = useState({
         creator: post.creator,
         prompt: post.prompt,
@@ -18,7 +20,7 @@ export default function UpdateComponents({post}: Props) {
 
     return (
         <Form
-            type="Edit"
+            type={t('type')}
             post={postData}
             setPost={setPostData}
             postId={post.id}

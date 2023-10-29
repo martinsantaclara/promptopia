@@ -4,6 +4,7 @@ import {Dispatch, SetStateAction, useState, useTransition} from 'react';
 import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 import {toast} from 'sonner';
+import {useTranslations} from 'next-intl';
 
 type Props = {
     post: PostWithUsers;
@@ -14,6 +15,7 @@ export default function DialogBox({post, setDialogBox}: Props) {
     let [isPending, startTransition] = useTransition();
     const [submitting, setIsSubmitting] = useState(false);
     const router = useRouter();
+    const t = useTranslations('DialogBox');
 
     return (
         <>
@@ -21,13 +23,13 @@ export default function DialogBox({post, setDialogBox}: Props) {
                 <div className='absolute w-full h-full bg-[url("/assets/images/grid.svg")] invert-[0.6] dark:invert-[0.4] top-0 left-0'></div>
                 <div className="relative z-10">
                     <h1 className="head_text text-end !text-xl !font-bold !mt-0 dark:text-white">
-                        Are you sure you want
+                        {t('row1')}
                         <br />
                         <span className="orange_gradient text-center !text-2xl !font-bold">
                             {' '}
-                            to delete{' '}
+                            {t('row2Text1')}{' '}
                             <span className="head_text text-center !text-xl !font-bold dark:text-white">
-                                this prompt?
+                                {t('row2Text2')}
                             </span>
                         </span>
                     </h1>
@@ -37,7 +39,7 @@ export default function DialogBox({post, setDialogBox}: Props) {
                             className="text-gray-500 hover:text-gray-900 text-sm dark:text-white/70 dark:hover:text-white/90"
                             onClick={() => setDialogBox(false)}
                         >
-                            Cancel
+                            {t('cancelButton')}
                         </button>
 
                         <button
@@ -48,7 +50,7 @@ export default function DialogBox({post, setDialogBox}: Props) {
                                 setIsSubmitting(true);
                                 startTransition(async () => {
                                     await deletePost(post);
-                                    toast.success('Post has been deleted');
+                                    toast.success(t('success'));
                                     //router.refresh();
                                     setDialogBox(false);
                                 });
@@ -63,7 +65,7 @@ export default function DialogBox({post, setDialogBox}: Props) {
                                     className="object-contain mr-3"
                                 />
                             ) : null}
-                            {submitting ? 'Deleting...' : 'Delete'}
+                            {submitting ? t('submitting') : t('deleteButton')}
                         </button>
                     </div>
                 </div>
