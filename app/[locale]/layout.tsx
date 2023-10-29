@@ -1,10 +1,5 @@
-import Navbar from '@/components/Navbar';
-import Home from '@/components/Home';
-
 import './globals.css';
 import '@uploadthing/react/styles.css';
-import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
 import AuthProvider from './context/AuthProvider';
 import {createTranslator, NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
@@ -12,7 +7,6 @@ import ThemeProviderContext from './context/ThemeProvider';
 import {getCookie} from '@/utils/getCookie';
 import Header from '@/components/Header';
 import BackGround from '@/components/BackGround';
-const inter = Inter({subsets: ['latin']});
 
 import {Toaster} from 'sonner';
 
