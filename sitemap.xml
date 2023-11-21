@@ -10,8 +10,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/</loc>
     <xhtml:link
                rel="alternate"
@@ -21,8 +21,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/</loc>
     <xhtml:link
                rel="alternate"
@@ -32,8 +32,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/post/</loc>
     <xhtml:link
                rel="alternate"
@@ -43,8 +43,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/post"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/post</loc>
     <xhtml:link
                rel="alternate"
@@ -54,8 +54,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/post"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/post</loc>
     <xhtml:link
                rel="alternate"
@@ -65,10 +65,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/post"/>
-  </url>
-
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/profile/</loc>
     <xhtml:link
                rel="alternate"
@@ -78,8 +76,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/profile"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/profile</loc>
     <xhtml:link
                rel="alternate"
@@ -89,8 +87,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/profile"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/profile</loc>
     <xhtml:link
                rel="alternate"
@@ -100,9 +98,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/profile"/>
-  </url>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/signin/</loc>
     <xhtml:link
                rel="alternate"
@@ -112,8 +109,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/signin"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/signin</loc>
     <xhtml:link
                rel="alternate"
@@ -123,8 +120,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/signin"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/signin</loc>
     <xhtml:link
                rel="alternate"
@@ -134,9 +131,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/signin"/>
-  </url>
-
-   <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/createpost/</loc>
     <xhtml:link
                rel="alternate"
@@ -146,8 +142,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/createpost"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/createpost</loc>
     <xhtml:link
                rel="alternate"
@@ -157,8 +153,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/createpost"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/createpost</loc>
     <xhtml:link
                rel="alternate"
@@ -168,9 +164,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/createpost"/>
-  </url>
-
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/error/</loc>
     <xhtml:link
                rel="alternate"
@@ -180,8 +175,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/error"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/error</loc>
     <xhtml:link
                rel="alternate"
@@ -191,8 +186,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/error"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/error</loc>
     <xhtml:link
                rel="alternate"
@@ -202,10 +197,8 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/error"/>
-  </url>
-
-
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/signout/</loc>
     <xhtml:link
                rel="alternate"
@@ -215,8 +208,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/signout"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/en/signout</loc>
     <xhtml:link
                rel="alternate"
@@ -226,8 +219,8 @@
                rel="alternate"
                hreflang="es"
                href="https://www.promptopia.com.ar/es/signout"/>
-  </url>
-  <url>
+</url>
+<url>
     <loc>https://www.promptopia.com.ar/es/error</loc>
     <xhtml:link
                rel="alternate"
@@ -237,8 +230,5 @@
                rel="alternate"
                hreflang="en"
                href="https://www.promptopia.com.ar/en/signout"/>
-  </url>
-
-
-
+</url>
 </urlset>
