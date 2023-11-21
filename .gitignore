@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 createdomain.js
+next-sitemap.config.js
 
 /interceptor
 /react-email-starter
