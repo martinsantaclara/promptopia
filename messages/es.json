@@ -1,201 +1,209 @@
 {
-    "App": {
-        "title": "App Promptopia",
-        "description": "App Promptopia - Por Javascript Mastery y Martin Santa Clara"
-    },
-    "HomePage": {
-        "title1": "Descubre & Comparte",
-        "title2": "Prompts Impulsados por IA",
-        "description": "Promptopia es una herramienta de prompts IA de código abierto para que el mundo moderno descubra, crea y comparta prompts creativos."
-    },
-    "FormFeed": {
-        "inputPlaceholder": "Buscar una etiqueta o un nombre de usuario"
-    },
-    "AboutPage": {
-        "title": "Acerca de...",
-        "buttonText": "Registro con Google"
-    },
-    "Navbar": {
-        "action": "Nuevo Post",
-        "signout": "Cerrar",
-        "signin": "Iniciar",
-        "profile": "Mi Perfil"
-    },
-    "Createpost": {
-        "title": "Nuevo Post",
-        "description": "Un nuevo post será creado",
-        "type": "Crear",
-        "message1": "La cuenta",
-        "message2": "no está activada"
-    },
-    "Updatepost": {
-        "title": "Actualiza Post",
-        "description": "Un post será actualizado",
-        "type": "Editar",
-        "mess1NotCreator": "Tú no eres",
-        "mess2NotCreator": "el creador",
-        "mess1NotExist": "El post",
-        "mess2NotExist": "no existe"
-    },
-    "Form": {
-        "subtitle": "{type} y comparte asombrosos prompts con el mundo, y deja volar tu imaginación en cualquier plataforma IA",
-        "success": "El Post ha sido {type}",
-        "error": "Un error ha occurrido, la acción no ha sido completada",
-        "promptLabel": "Prompt IA",
-        "promptPlaceholder": "Escribe tu prompt aquí",
-        "fieldLabel": "Categoría del Prompt",
-        "fieldTag": "(#producto, #desarrolloweb, #idea, etc.)",
-        "fieldPlaceholder": "#Etiqueta",
-        "cancelButton": "Cancelar",
-        "submitting": "{type}",
-        "okButton": "{type}"
-    },
-    "Profile": {
-        "title": "Perfil",
-        "description": "Este es el perfil de ",
-        "message1": "Debes",
-        "message2": "Iniciar sesión",
-        "head": "Mi Perfil",
-        "subtitle": "Bienvenido a tu página de perfil personalizada.",
-        "nameLabel": "Nombre",
-        "activateLabel": "Activar Cuenta",
-        "imageLabel": "Imagen de Perfil",
-        "loading": "Cargando...",
-        "choice": "Elige imagen",
-        "draganddrop": "o drag and drop",
-        "emailLabel": "Email",
-        "passwordLabel": "Contraseña",
-        "cancelButton": "Cancela",
-        "updateButton": "Actualiza",
-        "updating": "Actualizando..."
-    },
-    "Post": {
-        "title": "Posts de",
-        "description": "Estos son los posts de ",
-        "authorizedTitle1": "Mis",
-        "notAuthorizedTitle1": "{name}",
-        "authorizedDesc": "Bienvenido a tus posts. Comparte tus excepcionales prompts e inspira a otros con el poder de tu imaginación",
-        "notAuthorizedDesc": "Bienvenido a los posts de {userName}. Explore los excepcionales prompts de {userName} y será inspirado por el poder de su imaginación"
-    },
-    "ForgotPassword": {
-        "text": "Por favor, utiliza el mismo email que usaste para crear tu cuenta",
-        "label": "Email",
-        "action": "Nueva Contraseña"
-    },
-    "EnterToken": {
-        "text": "Revisa tu correo electrónico e introduce el token que te hemos enviado.",
-        "action": "Validar Token"
-    },
-    "NewPassword": {
-        "text": "Casi terminaste! Ahora simplemente ingresa la nueva contraseña.",
-        "password": "Nueva contraseña",
-        "confirmPassword": "Confirma Contraseña",
-        "action": "Cambiar contraseña",
-        "success": "La contraseña ha sido cambiada exitosamente!"
-    },
-    "ResetPassword": {
-        "success": "Tu contraseña ha sido cambiada",
-        "error": "Tus contraseñas deben coincidir"
-    },
-    "SendToken": {
-        "emailError": "Debes ingresar un email",
-        "userError": "No podemos encontrar un usuario con ese email"
-    },
-    "VerifyToken": {
-        "error": "El Token no es correcto, por favor, intenta otra vez."
-    },
-    "Signin": {
-        "signin": "Inicia Sesión",
-        "signinSocial": "Iniciar con {social}",
-        "emailSignin": "o usa tu cuenta",
-        "namePlaceholder": "Nombre",
-        "passwordPlaceholder": "Contraseña",
-        "forgotPassword": "Olvidaste tu contraseña?",
-        "signinSubmit": "Iniciar",
-        "create": "Crea tu Cuenta",
-        "signupSocial": "Registrate con {social}",
-        "emailSignup": "o usa tus datos para registrarte",
-        "signup": "Registrarte",
-        "signinWelcome": "Bienvenido otra vez!",
-        "signinMessage": "Para mantenerte conectado con nosotros, por favor, inicia sesión",
-        "signupWelcome": "Hola, Amigo!",
-        "signupMessage": "Crea tu cuenta y empieza tu viaje con nosotros."
-    },
-    "Signout": {
-        "row1": "Estás seguro",
-        "row2Text1": "que quieres ",
-        "row2Text2": "salir?",
-        "button": "Cerrar"
-    },
-    "ActivateEmail": {
-        "subject": "Confirma tu cuenta en Promptopia"
-    },
-    "ResetPasswordEmail": {
-        "subject": "Token para cambiar la contraseña"
-    },
-    "DialogBox": {
-        "row1": "Estás seguro que querés",
-        "row2Text1": "eliminar",
-        "row2Text2": "este post?",
-        "cancelButton": "Cancelar",
-        "success": "El Post ha sido eliminado",
-        "submitting": "Eliminando...",
-        "deleteButton": "Eliminar"
-    },
-    "LocaleSwitcher": {
-        "tooltipContent": "Cambiar a Inglés",
-        "locale": "{locale, select, en {Inglés} es {Español} other {Unknown}}"
-    },
-    "PostCard": {
-        "edit": "Editar",
-        "delete": "Eliminar"
-    },
-    "TimeAgo": {
-        "ago": "hace",
-        "now": "ahora",
-        "year": "año",
-        "month": "mes",
-        "day": "día",
-        "hour": "hora",
-        "minute": "minuto",
-        "second": "segundo"
-    },
-    "ActivateAccountEmail": {
-        "greeting": "Hola",
-        "heading": "Gracias por registrarte en Promptopia. Tu cuenta ha sido creada y ahora debes activarla dentro de las 24 horas; haz clic en el botón a continuación:",
-        "activate": "Activar"
-    },
-    "ResetPasswordTokenEmail": {
-        "greeting": "Hola",
-        "heading": "Tu token para cambiar la contraseña"
-    },
-    "Error": {
-        "title": "Something wrong ocurrió!",
-        "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
-    },
-    "NotFoundPage": {
-        "title": "Page not found",
-        "description": "Please double-check the browser address bar or use the navigation to go to a known page."
-    },
-    "LocaleLayout": {
-        "title": "ejemplo next-intl"
-    },
-    "Navigation": {
-        "home": "Home",
-        "about": "Acerca de"
-    },
-    "PageLayout": {
-        "links": {
-            "docs": {
-                "title": "Docs",
-                "description": "Learn more about next-intl in the official docs.",
-                "href": "https://next-intl-docs.vercel.app/"
-            },
-            "source": {
-                "title": "Source code",
-                "description": "Browse the source code of this example on GitHub.",
-                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-next-13"
-            }
-        }
+  "App": {
+    "title": "App Promptopia",
+    "description": "App Promptopia - Por Javascript Mastery y Martin Santa Clara"
+  },
+  "HomePage": {
+    "title1": "Descubre & Comparte",
+    "title2": "Prompts Impulsados por IA",
+    "description": "Promptopia es una herramienta de prompts IA de código abierto para que el mundo moderno descubra, crea y comparta prompts creativos."
+  },
+  "FormFeed": {
+    "inputPlaceholder": "Buscar una etiqueta o un nombre de usuario"
+  },
+  "AboutPage": {
+    "title": "Acerca de...",
+    "buttonText": "Registro con Google"
+  },
+  "Navbar": {
+    "action": "Nuevo Post",
+    "signout": "Cerrar",
+    "signin": "Iniciar",
+    "profile": "Mi Perfil",
+    "altLogo": "Logo App Promptopia",
+    "altProfileImage": "Imagen de Perfil"
+  },
+  "Createpost": {
+    "title": "Nuevo Post",
+    "description": "Un nuevo post será creado",
+    "type": "Crear",
+    "message1": "La cuenta",
+    "message2": "no está activada"
+  },
+  "Updatepost": {
+    "title": "Actualiza Post",
+    "description": "Un post será actualizado",
+    "type": "Editar",
+    "mess1NotCreator": "Tú no eres",
+    "mess2NotCreator": "el creador",
+    "mess1NotExist": "El post",
+    "mess2NotExist": "no existe"
+  },
+  "Form": {
+    "subtitle": "{type} y comparte asombrosos prompts con el mundo, y deja volar tu imaginación en cualquier plataforma IA",
+    "success": "El Post ha sido {type}",
+    "error": "Un error ha occurrido, la acción no ha sido completada",
+    "promptLabel": "Prompt IA",
+    "promptPlaceholder": "Escribe tu prompt aquí",
+    "fieldLabel": "Categoría del Prompt",
+    "fieldTag": "(#producto, #desarrolloweb, #idea, etc.)",
+    "fieldPlaceholder": "#Etiqueta",
+    "cancelButton": "Cancelar",
+    "submitting": "{type}",
+    "okButton": "{type}"
+  },
+  "Profile": {
+    "title": "Perfil",
+    "description": "Este es el perfil de ",
+    "message1": "Debes",
+    "message2": "Iniciar sesión",
+    "head": "Mi Perfil",
+    "subtitle": "Bienvenido a tu página de perfil personalizada.",
+    "nameLabel": "Nombre",
+    "activateLabel": "Activar Cuenta",
+    "imageLabel": "Imagen de Perfil",
+    "loading": "Cargando...",
+    "choice": "Elige imagen",
+    "draganddrop": "o drag and drop",
+    "emailLabel": "Email",
+    "passwordLabel": "Contraseña",
+    "cancelButton": "Cancela",
+    "updateButton": "Actualiza",
+    "updating": "Actualizando..."
+  },
+  "Post": {
+    "title": "Posts de",
+    "description": "Estos son los posts de ",
+    "authorizedTitle1": "Mis",
+    "notAuthorizedTitle1": "{name}",
+    "authorizedDesc": "Bienvenido a tus posts. Comparte tus excepcionales prompts e inspira a otros con el poder de tu imaginación",
+    "notAuthorizedDesc": "Bienvenido a los posts de {userName}. Explore los excepcionales prompts de {userName} y será inspirado por el poder de su imaginación"
+  },
+  "ForgotPassword": {
+    "text": "Por favor, utiliza el mismo email que usaste para crear tu cuenta",
+    "label": "Email",
+    "action": "Nueva Contraseña"
+  },
+  "EnterToken": {
+    "text": "Revisa tu correo electrónico e introduce el token que te hemos enviado.",
+    "action": "Validar Token"
+  },
+  "NewPassword": {
+    "text": "Casi terminaste! Ahora simplemente ingresa la nueva contraseña.",
+    "password": "Nueva contraseña",
+    "confirmPassword": "Confirma Contraseña",
+    "action": "Cambiar contraseña",
+    "success": "La contraseña ha sido cambiada exitosamente!"
+  },
+  "ResetPassword": {
+    "success": "Tu contraseña ha sido cambiada",
+    "error": "Tus contraseñas deben coincidir"
+  },
+  "SendToken": {
+    "emailError": "Debes ingresar un email",
+    "userError": "No podemos encontrar un usuario con ese email"
+  },
+  "VerifyToken": {
+    "error": "El Token no es correcto, por favor, intenta otra vez."
+  },
+  "Signin": {
+    "signin": "Inicia Sesión",
+    "signinSocial": "Iniciar con {social}",
+    "emailSignin": "o usa tu cuenta",
+    "namePlaceholder": "Nombre",
+    "passwordPlaceholder": "Contraseña",
+    "forgotPassword": "Olvidaste tu contraseña?",
+    "signinSubmit": "Iniciar",
+    "create": "Crea tu Cuenta",
+    "signupSocial": "Registrate con {social}",
+    "emailSignup": "o usa tus datos para registrarte",
+    "signup": "Registrarte",
+    "signinWelcome": "Bienvenido otra vez!",
+    "signinMessage": "Para mantenerte conectado con nosotros, por favor, inicia sesión",
+    "signupWelcome": "Hola, Amigo!",
+    "signupMessage": "Crea tu cuenta y empieza tu viaje con nosotros."
+  },
+  "Signout": {
+    "row1": "Estás seguro",
+    "row2Text1": "que quieres ",
+    "row2Text2": "salir?",
+    "button": "Cerrar"
+  },
+  "ActivateEmail": {
+    "subject": "Confirma tu cuenta en Promptopia"
+  },
+  "ResetPasswordEmail": {
+    "subject": "Token para cambiar la contraseña"
+  },
+  "DialogBox": {
+    "row1": "Estás seguro que querés",
+    "row2Text1": "eliminar",
+    "row2Text2": "este post?",
+    "cancelButton": "Cancelar",
+    "success": "El Post ha sido eliminado",
+    "submitting": "Eliminando...",
+    "deleteButton": "Eliminar"
+  },
+  "LocaleSwitcher": {
+    "tooltipContent": "Cambiar a Inglés",
+    "locale": "{locale, select, en {Inglés} es {Español} other {Unknown}}"
+  },
+  "PostCard": {
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "altUserImage": "Imagen de Usuario",
+    "altBtnCopy": "Botón de Copiar"
+  },
+  "TimeAgo": {
+    "ago": "hace",
+    "now": "ahora",
+    "year": "año",
+    "month": "mes",
+    "day": "día",
+    "hour": "hora",
+    "minute": "minuto",
+    "second": "segundo"
+  },
+  "ActivateAccountEmail": {
+    "greeting": "Hola",
+    "heading": "Gracias por registrarte en Promptopia. Tu cuenta ha sido creada y ahora debes activarla dentro de las 24 horas; haz clic en el botón a continuación:",
+    "activate": "Activar"
+  },
+  "ResetPasswordTokenEmail": {
+    "greeting": "Hola",
+    "heading": "Tu token para cambiar la contraseña"
+  },
+  "Error": {
+    "title": "Something wrong ocurrió!",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+  },
+  "Loading": {
+    "altUserImage": "Imagen de Usuario",
+    "altBtnCopy": "Botón Copiar"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page."
+  },
+  "LocaleLayout": {
+    "title": "ejemplo next-intl"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "Acerca de"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "title": "Docs",
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl-docs.vercel.app/"
+      },
+      "source": {
+        "title": "Source code",
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-next-13"
+      }
     }
+  }
 }

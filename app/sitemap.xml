@@ -5,11 +5,11 @@
     <priority>1.0</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/"/>
 </url>
 <url>
@@ -17,11 +17,11 @@
     <priority>1.0</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/"/>
 </url>
 <url>
@@ -29,11 +29,11 @@
     <priority>1.0</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/"/>
 </url>
 <url>
@@ -41,11 +41,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/post"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/post"/>
 </url>
 <url>
@@ -53,11 +53,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/post"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/post"/>
 </url>
 <url>
@@ -65,11 +65,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/post"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/post"/>
 </url>
 <url>
@@ -77,11 +77,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/profile"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/profile"/>
 </url>
 <url>
@@ -89,11 +89,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/profile"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/profile"/>
 </url>
 <url>
@@ -101,11 +101,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/profile"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/profile"/>
 </url>
 <url>
@@ -113,11 +113,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/signin"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/signin"/>
 </url>
 <url>
@@ -125,11 +125,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/signin"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/signin"/>
 </url>
 <url>
@@ -137,11 +137,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/signin"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/signin"/>
 </url>
 <url>
@@ -149,11 +149,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/createpost"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/createpost"/>
 </url>
 <url>
@@ -161,11 +161,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/createpost"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/createpost"/>
 </url>
 <url>
@@ -173,11 +173,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/createpost"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/createpost"/>
 </url>
 <url>
@@ -185,11 +185,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/error"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/error"/>
 </url>
 <url>
@@ -197,11 +197,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/error"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/error"/>
 </url>
 <url>
@@ -209,11 +209,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/error"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/error"/>
 </url>
 <url>
@@ -221,11 +221,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/signout"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/signout"/>
 </url>
 <url>
@@ -233,11 +233,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/signout"/>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/es/signout"/>
 </url>
 <url>
@@ -245,11 +245,11 @@
     <priority>0.7</priority>
     <xhtml:link
                rel="alternate"
-               hreflang="es"
+               hreflang="es-AR"
                href="https://www.promptopia.com.ar/signout"/>
     <xhtml:link
                rel="alternate"
-               hreflang="en"
+               hreflang="en-US"
                href="https://www.promptopia.com.ar/en/signout"/>
 </url>
 </urlset>

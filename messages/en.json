@@ -1,201 +1,209 @@
 {
-    "App": {
-        "title": "Promptopia App",
-        "description": "Promptopia App - By Javascript Mastery and Martin Santa Clara"
-    },
-    "HomePage": {
-        "title1": "Discover & Share",
-        "title2": "AI-Powered Prompts",
-        "description": "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts."
-    },
-    "FormFeed": {
-        "inputPlaceholder": "Search for a tag or a username"
-    },
-    "AboutPage": {
-        "title": "About Page",
-        "buttonText": "Sign Up With Google"
-    },
-    "Navbar": {
-        "action": "New Post",
-        "signout": "Sign out",
-        "signin": "Sign in",
-        "profile": "My Profile"
-    },
-    "Createpost": {
-        "title": "New Post",
-        "description": "A new post will be created",
-        "type": "Create",
-        "message1": "Your account",
-        "message2": "is not activated"
-    },
-    "Updatepost": {
-        "title": "Update Post",
-        "description": "A post will be updated",
-        "type": "Edit",
-        "mess1NotCreator": "You are not",
-        "mess2NotCreator": "the creator",
-        "mess1NotExist": "The post",
-        "mess2NotExist": "does not exist"
-    },
-    "Form": {
-        "subtitle": "{type} and share amazing prompts with the world, and let your imagination run wild with any AI-powered platform",
-        "success": "Post has been {type}",
-        "error": "An error has occurred, the action has not been completed",
-        "promptLabel": "Your AI Prompt",
-        "promptPlaceholder": "Write your prompt here",
-        "fieldLabel": "Field of Prompt",
-        "fieldTag": "(#product, #webdevelopment, #idea, etc.)",
-        "fieldPlaceholder": "#Tag",
-        "cancelButton": "Cancel",
-        "submitting": "{type}",
-        "okButton": "{type}"
-    },
-    "Profile": {
-        "title": "Profile",
-        "description": "This is the profile of ",
-        "message1": "You must",
-        "message2": "Sign in",
-        "head": "My Profile",
-        "subtitle": "Welcome to your personalized profile page.",
-        "nameLabel": "Name",
-        "activateLabel": "Activate Account",
-        "imageLabel": "Profile Image",
-        "loading": "Loading...",
-        "choice": "Choose image",
-        "draganddrop": "or drag and drop",
-        "emailLabel": "Email",
-        "passwordLabel": "Password",
-        "cancelButton": "Cancel",
-        "updateButton": "Update",
-        "updating": "Updating..."
-    },
-    "Post": {
-        "title": "Posts",
-        "description": "These are the posts of ",
-        "authorizedTitle1": "My",
-        "notAuthorizedTitle1": "{name}",
-        "authorizedDesc": "Welcome to your posts. Share your exceptional prompts and inspire others with the power of your imagination",
-        "notAuthorizedDesc": "Welcome to {userName}'s posts. Explore {userName}'s exceptional prompts and be inspired by the power of their imagination"
-    },
-    "ForgotPassword": {
-        "text": "Please use the same email address that you used to create your account",
-        "label": "Email Address",
-        "action": "Reset Password"
-    },
-    "EnterToken": {
-        "text": "Check your email and enter token that we have sent you below.",
-        "action": "Validate Token"
-    },
-    "NewPassword": {
-        "text": "Almost done! Now just enter a new password.",
-        "password": "New Password",
-        "confirmPassword": "Confirm Password",
-        "action": "Reset Password",
-        "success": "The password has been changed successfully!"
-    },
-    "ResetPassword": {
-        "success": "Your password has been reset",
-        "error": "Your passwords must match"
-    },
-    "SendToken": {
-        "emailError": "You must provide an email",
-        "userError": "We could not locate a user with that email address"
-    },
-    "VerifyToken": {
-        "error": "Token did not match, please try again."
-    },
-    "Signin": {
-        "signin": "Sign in",
-        "signinSocial": "Sign In with {social}",
-        "emailSignin": "or use your account",
-        "namePlaceholder": "Name",
-        "passwordPlaceholder": "Password",
-        "forgotPassword": "Forgot your password?",
-        "signinSubmit": "Sign in",
-        "create": "Create Account",
-        "signupSocial": "Sign Up with {social}",
-        "emailSignup": "or use your data for registration",
-        "signup": "Sign Up",
-        "signinWelcome": "Welcome Back!",
-        "signinMessage": "To keep connected with us please login",
-        "signupWelcome": "Hello, Friend!",
-        "signupMessage": "Create your account and start your journey with us."
-    },
-    "Signout": {
-        "row1": "Are you sure",
-        "row2Text1": "you want to ",
-        "row2Text2": "sign out?",
-        "button": "Sign out"
-    },
-    "ActivateEmail": {
-        "subject": "Confirm your account on Promptopia"
-    },
-    "ResetPasswordEmail": {
-        "subject": "Password Reset Token"
-    },
-    "DialogBox": {
-        "row1": "Are you sure you want",
-        "row2Text1": "to delete",
-        "row2Text2": "this post?",
-        "cancelButton": "Cancel",
-        "success": "Post has been deleted",
-        "submitting": "Deleting...",
-        "deleteButton": "Delete"
-    },
-    "LocaleSwitcher": {
-        "tooltipContent": "Change to Spanish",
-        "locale": "{locale, select, en {English} es {Spanish} other {Unknown}}"
-    },
-    "PostCard": {
-        "edit": "Edit",
-        "delete": "Delete"
-    },
-    "TimeAgo": {
-        "ago": "ago",
-        "now": "now",
-        "year": "year",
-        "month": "month",
-        "day": "day",
-        "hour": "hour",
-        "minute": "minute",
-        "second": "second"
-    },
-    "ActivateAccountEmail": {
-        "greeting": "Hi",
-        "heading": "Thank you for signing up for Promptopia. Your account has been created and must now be activated within 24 hours - click the button below:",
-        "activate": "Activate"
-    },
-    "ResetPasswordTokenEmail": {
-        "greeting": "Hi",
-        "heading": "This is your password reset token"
-    },
-    "Error": {
-        "title": "Something went wrong!",
-        "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
-    },
-    "NotFoundPage": {
-        "title": "Page not found",
-        "description": "Please double-check the browser address bar or use the navigation to go to a known page."
-    },
-    "LocaleLayout": {
-        "title": "next-intl example"
-    },
-    "Navigation": {
-        "home": "Home",
-        "about": "About"
-    },
-    "PageLayout": {
-        "links": {
-            "docs": {
-                "title": "Docs",
-                "description": "Learn more about next-intl in the official docs.",
-                "href": "https://next-intl-docs.vercel.app/"
-            },
-            "source": {
-                "title": "Source code",
-                "description": "Browse the source code of this example on GitHub.",
-                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-next-13"
-            }
-        }
+  "App": {
+    "title": "Promptopia App",
+    "description": "Promptopia App - By Javascript Mastery and Martin Santa Clara"
+  },
+  "HomePage": {
+    "title1": "Discover & Share",
+    "title2": "AI-Powered Prompts",
+    "description": "Promptopia is an open-source AI prompting tool for modern world to discover, create and share creative prompts."
+  },
+  "FormFeed": {
+    "inputPlaceholder": "Search for a tag or a username"
+  },
+  "AboutPage": {
+    "title": "About Page",
+    "buttonText": "Sign Up With Google"
+  },
+  "Navbar": {
+    "action": "New Post",
+    "signout": "Sign out",
+    "signin": "Sign in",
+    "profile": "My Profile",
+    "altLogo": "Promptopia App Logo",
+    "altProfileImage": "Profile Image"
+  },
+  "Createpost": {
+    "title": "New Post",
+    "description": "A new post will be created",
+    "type": "Create",
+    "message1": "Your account",
+    "message2": "is not activated"
+  },
+  "Updatepost": {
+    "title": "Update Post",
+    "description": "A post will be updated",
+    "type": "Edit",
+    "mess1NotCreator": "You are not",
+    "mess2NotCreator": "the creator",
+    "mess1NotExist": "The post",
+    "mess2NotExist": "does not exist"
+  },
+  "Form": {
+    "subtitle": "{type} and share amazing prompts with the world, and let your imagination run wild with any AI-powered platform",
+    "success": "Post has been {type}",
+    "error": "An error has occurred, the action has not been completed",
+    "promptLabel": "Your AI Prompt",
+    "promptPlaceholder": "Write your prompt here",
+    "fieldLabel": "Field of Prompt",
+    "fieldTag": "(#product, #webdevelopment, #idea, etc.)",
+    "fieldPlaceholder": "#Tag",
+    "cancelButton": "Cancel",
+    "submitting": "{type}",
+    "okButton": "{type}"
+  },
+  "Profile": {
+    "title": "Profile",
+    "description": "This is the profile of ",
+    "message1": "You must",
+    "message2": "Sign in",
+    "head": "My Profile",
+    "subtitle": "Welcome to your personalized profile page.",
+    "nameLabel": "Name",
+    "activateLabel": "Activate Account",
+    "imageLabel": "Profile Image",
+    "loading": "Loading...",
+    "choice": "Choose image",
+    "draganddrop": "or drag and drop",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "cancelButton": "Cancel",
+    "updateButton": "Update",
+    "updating": "Updating..."
+  },
+  "Post": {
+    "title": "Posts",
+    "description": "These are the posts of ",
+    "authorizedTitle1": "My",
+    "notAuthorizedTitle1": "{name}",
+    "authorizedDesc": "Welcome to your posts. Share your exceptional prompts and inspire others with the power of your imagination",
+    "notAuthorizedDesc": "Welcome to {userName}'s posts. Explore {userName}'s exceptional prompts and be inspired by the power of their imagination"
+  },
+  "ForgotPassword": {
+    "text": "Please use the same email address that you used to create your account",
+    "label": "Email Address",
+    "action": "Reset Password"
+  },
+  "EnterToken": {
+    "text": "Check your email and enter token that we have sent you below.",
+    "action": "Validate Token"
+  },
+  "NewPassword": {
+    "text": "Almost done! Now just enter a new password.",
+    "password": "New Password",
+    "confirmPassword": "Confirm Password",
+    "action": "Reset Password",
+    "success": "The password has been changed successfully!"
+  },
+  "ResetPassword": {
+    "success": "Your password has been reset",
+    "error": "Your passwords must match"
+  },
+  "SendToken": {
+    "emailError": "You must provide an email",
+    "userError": "We could not locate a user with that email address"
+  },
+  "VerifyToken": {
+    "error": "Token did not match, please try again."
+  },
+  "Signin": {
+    "signin": "Sign in",
+    "signinSocial": "Sign In with {social}",
+    "emailSignin": "or use your account",
+    "namePlaceholder": "Name",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot your password?",
+    "signinSubmit": "Sign in",
+    "create": "Create Account",
+    "signupSocial": "Sign Up with {social}",
+    "emailSignup": "or use your data for registration",
+    "signup": "Sign Up",
+    "signinWelcome": "Welcome Back!",
+    "signinMessage": "To keep connected with us please login",
+    "signupWelcome": "Hello, Friend!",
+    "signupMessage": "Create your account and start your journey with us."
+  },
+  "Signout": {
+    "row1": "Are you sure",
+    "row2Text1": "you want to ",
+    "row2Text2": "sign out?",
+    "button": "Sign out"
+  },
+  "ActivateEmail": {
+    "subject": "Confirm your account on Promptopia"
+  },
+  "ResetPasswordEmail": {
+    "subject": "Password Reset Token"
+  },
+  "DialogBox": {
+    "row1": "Are you sure you want",
+    "row2Text1": "to delete",
+    "row2Text2": "this post?",
+    "cancelButton": "Cancel",
+    "success": "Post has been deleted",
+    "submitting": "Deleting...",
+    "deleteButton": "Delete"
+  },
+  "LocaleSwitcher": {
+    "tooltipContent": "Change to Spanish",
+    "locale": "{locale, select, en {English} es {Spanish} other {Unknown}}"
+  },
+  "PostCard": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "altUserImage": "User Image",
+    "altBtnCopy": "Button Copy"
+  },
+  "TimeAgo": {
+    "ago": "ago",
+    "now": "now",
+    "year": "year",
+    "month": "month",
+    "day": "day",
+    "hour": "hour",
+    "minute": "minute",
+    "second": "second"
+  },
+  "ActivateAccountEmail": {
+    "greeting": "Hi",
+    "heading": "Thank you for signing up for Promptopia. Your account has been created and must now be activated within 24 hours - click the button below:",
+    "activate": "Activate"
+  },
+  "ResetPasswordTokenEmail": {
+    "greeting": "Hi",
+    "heading": "This is your password reset token"
+  },
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+  },
+  "Loading": {
+    "altUserImage": "User Image",
+    "altBtnCopy": "Button Copy"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page."
+  },
+  "LocaleLayout": {
+    "title": "next-intl example"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About"
+  },
+  "PageLayout": {
+    "links": {
+      "docs": {
+        "title": "Docs",
+        "description": "Learn more about next-intl in the official docs.",
+        "href": "https://next-intl-docs.vercel.app/"
+      },
+      "source": {
+        "title": "Source code",
+        "description": "Browse the source code of this example on GitHub.",
+        "href": "https://github.com/amannn/next-intl/tree/main/examples/example-next-13"
+      }
     }
+  }
 }
